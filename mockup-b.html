@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>B — Editorial Engineering</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--pp:#F4F1EA;--ink:#15120C;--mut:#6B6455;--ox:#A6402C;--ln:#D8D2C4}
+body{font-family:"Pretendard Variable",Pretendard,sans-serif;background:var(--pp);color:var(--ink);letter-spacing:-.01em;word-break:keep-all}
+.wr{max-width:1440px;margin:0 auto;padding:0 64px}
+/* masthead header */
+.mh{border-bottom:1.5px solid var(--ink)}
+.mh__in{max-width:1440px;margin:0 auto;padding:20px 64px;display:flex;align-items:center;justify-content:space-between}
+.mh .lg{font-size:21px;font-weight:800;letter-spacing:-.02em}
+.mh nav{display:flex;gap:30px;font-size:14px;font-weight:500}
+.mh .meta{font-size:11px;letter-spacing:.14em;color:var(--mut)}
+/* hero typographic */
+.hero{padding:clamp(60px,7vw,110px) 0 clamp(70px,8vw,120px);border-bottom:1px solid var(--ln)}
+.hero__g{display:grid;grid-template-columns:8fr 4fr;gap:60px;align-items:end}
+.hero .idx{font-size:12px;letter-spacing:.1em;color:var(--mut);margin-bottom:30px;display:flex;gap:26px}
+.hero .idx b{color:var(--ox);font-weight:600}
+.hero h1{font-size:clamp(52px,7.4vw,116px);font-weight:800;line-height:.96;letter-spacing:-.045em}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--ox)}
+.hero .rgt{border-left:1px solid var(--ln);padding-left:30px}
+.hero .frame{aspect-ratio:4/5;border:1px solid var(--ln);background:repeating-linear-gradient(135deg,#e9e3d5 0 2px,transparent 2px 22px);position:relative;margin-bottom:20px}
+.hero .frame span{position:absolute;left:14px;bottom:12px;font-size:10px;letter-spacing:.14em;color:var(--mut)}
+.hero .rgt p{font-size:14px;line-height:1.75;color:var(--mut)}
+/* capability TOC */
+.sec{padding:clamp(64px,8vw,120px) 0}
+.kick{display:flex;align-items:baseline;gap:16px;margin-bottom:44px}
+.kick .n{font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--ox)}
+.kick h2{font-size:clamp(28px,3.4vw,46px);font-weight:800;letter-spacing:-.03em}
+.toc{border-top:2px solid var(--ink)}
+.toc__r{display:grid;grid-template-columns:60px 300px 1fr auto;gap:20px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--ln)}
+.toc__r .no{font-size:13px;color:var(--mut);font-weight:600}
+.toc__r .nm{font-size:clamp(19px,2vw,26px);font-weight:800;letter-spacing:-.02em}
+.toc__r .en{font-size:13px;color:var(--mut)}
+.toc__r .ds{font-size:14px;color:var(--mut)}
+/* business editorial spread */
+.spread{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:start}
+.spread .lead{font-size:19px;line-height:1.7;color:var(--ink)}
+.spread .lead .drop{font-size:15px;color:var(--mut);margin-top:20px}
+.spec{width:100%;border-collapse:collapse}
+.spec th{text-align:left;font-size:11px;letter-spacing:.1em;color:var(--mut);text-transform:uppercase;padding:0 0 14px;border-bottom:1.5px solid var(--ink)}
+.spec td{padding:18px 0;border-bottom:1px solid var(--ln);vertical-align:top;font-size:15px}
+.spec .d{font-weight:800;font-size:17px}
+.spec .e{font-size:12px;color:var(--mut);margin-top:3px}
+.spec .it{color:var(--mut);font-size:14px;line-height:1.7}
+/* footer colophon */
+.cf{border-top:1.5px solid var(--ink);padding:clamp(56px,6vw,90px) 0 40px}
+.cf__cta{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;padding-bottom:50px;border-bottom:1px solid var(--ln)}
+.cf__cta h2{font-size:clamp(30px,4vw,58px);font-weight:800;letter-spacing:-.03em;line-height:1.05}
+.cf__cta h2 em{font-style:italic;font-weight:500;color:var(--ox)}
+.cf__cta a{font-size:16px;font-weight:600;border-bottom:2px solid var(--ox);padding-bottom:4px}
+.cf__cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px;padding-top:44px}
+.cf h4{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:14px}
+.cf a.li,.cf p{display:block;font-size:14px;color:var(--ink);padding:5px 0}
+.cf .fine{margin-top:40px;font-size:11px;letter-spacing:.06em;color:var(--mut)}
+.lbl{position:fixed;left:16px;top:16px;z-index:9;background:var(--ox);color:#fff;font-size:12px;font-weight:700;letter-spacing:.1em;padding:8px 14px}
+</style></head><body>
+<div class="lbl">B — EDITORIAL ENGINEERING</div>
+
+<header class="mh"><div class="mh__in">
+  <div class="lg">K1 OCEAN — (주)케이원</div>
+  <nav>회사소개 사업분야 프로젝트 인재채용 홍보센터 문의</nav>
+  <div class="meta">EST. 2017 · INTEGRATED COMMISSIONING · KR/EN</div>
+</div></header>
+
+<div class="wr">
+<section class="hero"><div class="hero__g">
+  <div>
+    <div class="idx"><span>No. <b>01</b> — Commissioning</span><span>35.02°N 128.70°E · Geoje</span><span>Since 2017</span></div>
+    <h1>프로젝트의<br>마지막 순간,<br><em>K1</em>이 완성합니다</h1>
+  </div>
+  <div class="rgt">
+    <div class="frame"><span>IMAGE — 대표/현장 (4:5)</span></div>
+    <p>해양플랜트 · 조선 · 에너지 산업의 시스템 완성과 성능 구현을 책임지는 통합 시운전 전문 기업, (주)케이원.</p>
+  </div>
+</div></section>
+
+<section class="sec">
+  <div class="kick"><span class="n">／ 02 CAPABILITY</span><h2>핵심 역량</h2></div>
+  <div class="toc">
+    <div class="toc__r"><span class="no">01</span><span class="nm">Full-Ship Commissioning</span><span class="en">선박 통합 시운전</span><span class="ds">전체 전력·제어 시스템 통합 시운전</span></div>
+    <div class="toc__r"><span class="no">02</span><span class="nm">High Voltage System</span><span class="en">고전압 계통</span><span class="ds">Generator · Transformer · HV Switchgear</span></div>
+    <div class="toc__r"><span class="no">03</span><span class="nm">Integrated E&amp;I</span><span class="en">전기·계장 통합</span><span class="ds">인터페이스 및 시스템 검증</span></div>
+    <div class="toc__r"><span class="no">04</span><span class="nm">Commissioning Workforce</span><span class="en">전문 인력 체계</span><span class="ds">HV 전문 엔지니어 현장 투입</span></div>
+  </div>
+</section>
+</div>
+
+<div style="background:#EEEAE0"><div class="wr"><section class="sec" style="border:0">
+  <div class="kick"><span class="n">／ 03 BUSINESS</span><h2>사업분야</h2></div>
+  <div class="spread">
+    <div class="lead">시스템을 기동하는 기술, K1이 수행합니다.
+      <div class="drop">전기·기계·계장·공조·항해통신 전 영역에 대한 One-Stop Commissioning을 수행합니다. 시운전을 넘어 FGSS·ALS 등 친환경 추진 시스템까지 기술을 지원합니다.</div>
+    </div>
+    <table class="spec">
+      <thead><tr><th>분야</th><th>주요 항목</th></tr></thead>
+      <tbody>
+        <tr><td><div class="d">전기 시운전</div><div class="e">Electrical</div></td><td class="it">고전압·전력 통합 시운전 · Synchronizing / Load Test / PMS · DP &amp; FMEA</td></tr>
+        <tr><td><div class="d">기계 시운전</div><div class="e">Mechanical</div></td><td class="it">회전/비회전 장비 시험 · 운전 상태·성능 검증</td></tr>
+        <tr><td><div class="d">계장 시운전</div><div class="e">Instrumentation</div></td><td class="it">Calibration &amp; Loop Check · C&amp;E Test 제어 로직</td></tr>
+        <tr><td><div class="d">기술지원·친환경</div><div class="e">FGSS / ALS</div></td><td class="it">LNG·Dual Fuel · FGSS · ALS·BOG·BWTS·SCRUBBER</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section></div></div>
+
+<div class="wr"><footer class="cf">
+  <div class="cf__cta">
+    <h2>프로젝트의 마지막 순간,<br><em>케이원이 함께하겠습니다</em></h2>
+    <a href="#">문의하기 →</a>
+  </div>
+  <div class="cf__cols">
+    <div><h4>K1 OCEAN</h4><p>통합 시운전 전문 기업 (주)케이원. 해양플랜트·조선·에너지 산업의 시스템 완성을 책임집니다.</p></div>
+    <div><h4>Sitemap</h4><a class="li" href="#">회사소개</a><a class="li" href="#">사업분야</a><a class="li" href="#">프로젝트</a></div>
+    <div><h4>Contact</h4><p>거제시 옥포대첩로 59, 2F</p><p>055-736-5959</p></div>
+    <div><h4>Mail</h4><p>k1ocean@k1tnc.co.kr</p></div>
+  </div>
+  <div class="fine">© 2026 (주)케이원 (K1 Co., Ltd.) · K1 OCEAN — All rights reserved.</div>
+</footer></div>
+</body></html>

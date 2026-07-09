@@ -1,0 +1,101 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A — Cinematic Industrial</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--nav:#081726;--nav2:#0C2338;--off:#F2EFE9;--warm:#E1571F;--tx:#DCE4EC}
+body{font-family:"Pretendard Variable",Pretendard,sans-serif;background:var(--off);color:#0B1A28;letter-spacing:-.02em;word-break:keep-all}
+.wr{max-width:1440px;margin:0 auto;padding:0 60px}
+/* header */
+.h{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;height:96px;padding:0 60px;color:#fff}
+.h .lg{font-size:22px;font-weight:800;letter-spacing:-.03em}.h .lg b{color:var(--warm)}
+.h nav{display:flex;gap:38px;font-size:15px;font-weight:500;opacity:.9}
+.h .kr{font-size:13px;font-weight:600}.h .kr b{color:var(--warm)}
+/* hero full-bleed */
+.hero{position:relative;height:100vh;min-height:760px;background:radial-gradient(120% 90% at 78% 30%,#1a4a74 0%,#0a2136 45%,#061421 100%);color:#fff;overflow:hidden}
+.hero .ph{position:absolute;inset:0;background:linear-gradient(120deg,#0a2338 0%,#12456f 60%,#1d6ba3 100%);opacity:.5}
+.hero .tag{position:absolute;left:16px;bottom:14px;font-size:11px;letter-spacing:.2em;color:rgba(255,255,255,.55)}
+.hero .ghost{position:absolute;right:-2%;top:16%;font-size:clamp(120px,17vw,240px);font-weight:800;color:rgba(255,255,255,.05);letter-spacing:-.04em;line-height:.8}
+.hero__c{position:absolute;left:60px;bottom:120px;z-index:2}
+.hero .ey{display:flex;align-items:center;gap:12px;font-size:14px;letter-spacing:.12em;color:#CFE0F0;margin-bottom:22px}
+.hero .ey::before{content:"";width:44px;height:1px;background:var(--warm)}
+.hero h1{font-size:clamp(48px,6.6vw,94px);font-weight:800;line-height:1.0;letter-spacing:-.045em}
+.hero p{margin-top:22px;font-size:18px;color:rgba(230,238,246,.85);max-width:44ch}
+.film{position:absolute;left:60px;bottom:44px;display:flex;align-items:center;gap:16px;z-index:2}
+.film .b{width:56px;height:3px;background:rgba(255,255,255,.25)}.film .b.on{background:var(--warm)}
+.film span{font-size:13px;letter-spacing:.1em;color:rgba(255,255,255,.6)}
+.scr{position:absolute;right:60px;bottom:44px;z-index:2;font-size:11px;letter-spacing:.2em;color:rgba(255,255,255,.55)}
+/* about full-bleed band */
+.about{position:relative;height:78vh;min-height:560px;background:linear-gradient(120deg,#0c2338,#15446c 70%);color:#fff;display:flex;align-items:flex-end;overflow:hidden}
+.about .ph{position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.03) 0 2px,transparent 2px 40px)}
+.about .tag{position:absolute;left:20px;top:20px;font-size:11px;letter-spacing:.2em;color:rgba(255,255,255,.5)}
+.about__c{position:relative;z-index:2;padding:0 60px 90px;max-width:1000px}
+.about .eyb{font-size:13px;letter-spacing:.16em;color:var(--warm);font-weight:600;margin-bottom:20px}
+.about h2{font-size:clamp(32px,4.4vw,64px);font-weight:800;line-height:1.08;letter-spacing:-.03em}
+.about h2 em{font-style:normal;color:#8FC0E6}
+/* business cinematic bands */
+.biz{background:#061421}
+.bizrow{position:relative;height:64vh;min-height:460px;display:flex;align-items:center;overflow:hidden;border-top:1px solid rgba(255,255,255,.07)}
+.bizrow .ph{position:absolute;inset:0;background:linear-gradient(120deg,#0a2135,#123f63)}
+.bizrow.alt .ph{background:linear-gradient(120deg,#0d2740,#164a72)}
+.bizrow .ph .t{position:absolute;left:20px;bottom:16px;font-size:11px;letter-spacing:.2em;color:rgba(255,255,255,.45)}
+.bizrow .no{position:absolute;right:5%;top:50%;transform:translateY(-50%);font-size:clamp(120px,15vw,220px);font-weight:800;color:rgba(255,255,255,.06);line-height:.8}
+.bizrow__c{position:relative;z-index:2;padding:0 60px;color:#fff;max-width:760px}
+.bizrow .k{font-size:13px;letter-spacing:.14em;color:var(--warm);font-weight:600;margin-bottom:16px}
+.bizrow h3{font-size:clamp(34px,4.2vw,58px);font-weight:800;letter-spacing:-.03em}
+.bizrow p{margin-top:18px;font-size:16px;color:rgba(224,234,244,.8);max-width:42ch}
+/* footer full-bleed */
+.foot{background:var(--nav);color:var(--tx);padding:110px 60px 44px}
+.foot h2{font-size:clamp(34px,4.6vw,66px);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.05;max-width:16ch}
+.foot h2 em{font-style:normal;color:#8FC0E6}
+.foot .cta{display:inline-flex;align-items:center;gap:36px;margin-top:38px;padding:20px 34px;background:var(--warm);color:#fff;font-size:16px;font-weight:600}
+.foot .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-top:80px;padding-top:34px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:rgba(220,228,236,.6)}
+.lbl{position:fixed;left:16px;top:16px;z-index:9;background:var(--warm);color:#fff;font-size:12px;font-weight:700;letter-spacing:.1em;padding:8px 14px}
+</style></head><body>
+<div class="lbl">A — CINEMATIC INDUSTRIAL</div>
+
+<header class="h">
+  <div class="lg">K1<b>·</b>OCEAN</div>
+  <nav>회사소개 &nbsp; 사업분야 &nbsp; 프로젝트 실적 &nbsp; 인재채용 &nbsp; 홍보센터 &nbsp; 고객문의</nav>
+  <div class="kr"><b>KR</b> · EN</div>
+</header>
+
+<section class="hero">
+  <div class="ph"></div><div class="tag">IMAGE — 해양·선박 현장 (풀블리드 21:9)</div>
+  <div class="ghost">COMMISSIONING</div>
+  <div class="hero__c">
+    <div class="ey">TOTAL SOLUTION · COMMISSIONING</div>
+    <h1>프로젝트의 마지막 순간,<br>K1이 완성합니다</h1>
+    <p>해양플랜트 · 조선 · 에너지 산업의 시스템 완성과 성능 구현을 책임지는 통합 시운전 전문 기업</p>
+  </div>
+  <div class="film"><div class="b on"></div><div class="b"></div><div class="b"></div><span>01 / 03</span></div>
+  <div class="scr">SCROLL ↓</div>
+</section>
+
+<section class="about">
+  <div class="ph"></div><div class="tag">IMAGE — 현장 작업자 / 설비 디테일 (풀블리드)</div>
+  <div class="about__c">
+    <div class="eyb">ABOUT US</div>
+    <h2>신뢰로 증명하는 <em>통합 시운전 파트너</em> —<br>시작부터 마지막 순간까지, 그 모든 과정을 책임집니다.</h2>
+  </div>
+</section>
+
+<section class="biz">
+  <div class="bizrow">
+    <div class="ph"><div class="t">IMAGE — 전기 시운전 현장</div></div>
+    <div class="no">01</div>
+    <div class="bizrow__c"><div class="k">ELECTRICAL</div><h3>전기 시운전</h3><p>고전압·전력 시스템 통합 시운전, Synchronizing / Load Test / PMS, DP &amp; FMEA Commissioning 수행</p></div>
+  </div>
+  <div class="bizrow alt">
+    <div class="ph"><div class="t">IMAGE — 기계 시운전 설비</div></div>
+    <div class="no">02</div>
+    <div class="bizrow__c"><div class="k">MECHANICAL</div><h3>기계 시운전</h3><p>펌프·컴프레서·밸브 등 회전/비회전 장비 시험 및 운전 상태·성능 검증</p></div>
+  </div>
+</section>
+
+<footer class="foot">
+  <h2>프로젝트의 마지막 순간,<br><em>케이원이 함께하겠습니다</em></h2>
+  <div class="cta">문의하기 &nbsp;→</div>
+  <div class="row"><span>경남 거제시 옥포대첩로 59, 2F · TEL 055-736-5959</span><span>© 2026 (주)케이원 · K1 OCEAN</span></div>
+</footer>
+</body></html>

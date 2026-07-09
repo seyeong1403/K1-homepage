@@ -1,0 +1,128 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C — Technical System</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0A0E13;--pnl:#121A24;--am:#F0A227;--tx:#AEB9C6;--txh:#EAF0F6;--ln:rgba(140,165,190,.16);--lt:#EEF1F4;--ltln:#DCE1E7;--ink:#0C1620}
+body{font-family:"Pretendard Variable",Pretendard,sans-serif;background:var(--bg);color:var(--tx);letter-spacing:-.01em;word-break:keep-all}
+.wr{max-width:1440px;margin:0 auto;padding:0 60px}
+.mono{font-feature-settings:"tnum";letter-spacing:.06em}
+/* header */
+.h{position:sticky;top:0;z-index:5;background:rgba(10,14,19,.9);border-bottom:1px solid var(--ln)}
+.h__in{max-width:1440px;margin:0 auto;padding:0 60px;height:76px;display:flex;align-items:center;justify-content:space-between}
+.h .lg{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.02em}
+.h nav{display:flex;gap:32px;font-size:15px;font-weight:500}
+.h .st{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.1em;color:var(--tx)}
+.h .st i{width:7px;height:7px;border-radius:50%;background:var(--am);display:inline-block}
+/* hero dark schematic */
+.hero{position:relative;padding:clamp(90px,12vh,150px) 0 clamp(70px,9vh,110px);overflow:hidden;
+  background-image:linear-gradient(var(--ln) 1px,transparent 1px),linear-gradient(90deg,var(--ln) 1px,transparent 1px);background-size:64px 64px}
+.hero__g{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.hero .ey{font-size:13px;letter-spacing:.16em;color:var(--am);font-weight:600;margin-bottom:24px}
+.hero h1{font-size:clamp(42px,5.6vw,84px);font-weight:800;color:#fff;line-height:1.02;letter-spacing:-.04em}
+.hero p{margin-top:24px;font-size:17px;color:var(--tx);max-width:40ch;line-height:1.7}
+.read{display:flex;gap:40px;margin-top:40px}
+.read .v{font-size:34px;font-weight:800;color:#fff;letter-spacing:-.03em}.read .v em{font-style:normal;font-size:.42em;color:var(--am)}
+.read .l{font-size:12px;letter-spacing:.08em;color:var(--tx);margin-top:6px}
+.sch text{font-family:"Pretendard Variable",sans-serif}
+/* capability process map (dark) */
+.cap{border-top:1px solid var(--ln);padding:clamp(70px,9vw,130px) 0}
+.kick{margin-bottom:56px}.kick .n{font-size:13px;font-weight:600;letter-spacing:.14em;color:var(--am)}
+.kick h2{font-size:clamp(30px,3.6vw,52px);font-weight:800;color:#fff;letter-spacing:-.03em;margin-top:14px}
+.pmap{position:relative;padding-left:40px}
+.pmap::before{content:"";position:absolute;left:6px;top:10px;bottom:10px;width:2px;background:var(--ln)}
+.pnode{position:relative;padding:22px 0 22px 30px;border-bottom:1px solid var(--ln)}
+.pnode::before{content:"";position:absolute;left:-40px;top:28px;width:14px;height:14px;border:2px solid var(--am);border-radius:50%;background:var(--bg)}
+.pnode .no{font-size:12px;color:var(--am);font-weight:700}
+.pnode h3{font-size:clamp(20px,2.2vw,30px);font-weight:800;color:var(--txh);letter-spacing:-.02em;margin:6px 0}
+.pnode p{font-size:14.5px;color:var(--tx);max-width:60ch}
+/* business pipeline (light) */
+.biz{background:var(--lt);color:var(--ink);padding:clamp(70px,9vw,130px) 0}
+.biz .kick h2{color:var(--ink)}.biz .kick .n{color:#C06A12}
+.pipe{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border:1px solid var(--ltln)}
+.stage{padding:26px 20px 30px;border-right:1px solid var(--ltln);position:relative;min-height:200px;display:flex;flex-direction:column}
+.stage:last-child{border-right:0}
+.stage .no{font-size:12px;font-weight:700;color:#B4651A;font-feature-settings:"tnum"}
+.stage h4{font-size:17px;font-weight:800;margin:12px 0 4px;letter-spacing:-.02em}
+.stage .en{font-size:11px;letter-spacing:.08em;color:#8A93A0;text-transform:uppercase}
+.stage .ar{margin-top:auto;color:#C06A12;font-size:18px}
+.biz .flow{display:flex;align-items:center;gap:14px;margin-bottom:30px;font-size:13px;color:#6C7683;letter-spacing:.04em}
+.biz .flow b{color:#B4651A;font-weight:700}
+/* footer dashboard */
+.foot{border-top:1px solid var(--ln);padding:clamp(70px,8vw,110px) 0 44px;
+  background-image:linear-gradient(var(--ln) 1px,transparent 1px),linear-gradient(90deg,var(--ln) 1px,transparent 1px);background-size:64px 64px}
+.foot h2{font-size:clamp(30px,4vw,58px);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.05}
+.foot h2 em{font-style:normal;color:var(--am)}
+.foot .cta{display:inline-block;margin-top:32px;padding:18px 32px;background:var(--am);color:#1a1204;font-size:16px;font-weight:700}
+.foot .grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:24px;margin-top:70px;padding-top:32px;border-top:1px solid var(--ln)}
+.foot h4{font-size:11px;letter-spacing:.14em;color:var(--tx);text-transform:uppercase;margin-bottom:14px}
+.foot .grid p,.foot .grid a{display:block;font-size:13.5px;color:var(--tx);padding:5px 0}
+.foot .co{margin-top:34px;font-size:11px;letter-spacing:.1em;color:var(--tx)}
+.lbl{position:fixed;left:16px;top:16px;z-index:9;background:var(--am);color:#1a1204;font-size:12px;font-weight:700;letter-spacing:.1em;padding:8px 14px}
+</style></head><body>
+<div class="lbl">C — TECHNICAL SYSTEM</div>
+
+<header class="h"><div class="h__in">
+  <div class="lg" style="color:#fff">K1 OCEAN</div>
+  <nav>회사소개 사업분야 프로젝트 인재채용 홍보센터 문의</nav>
+  <div class="st"><i></i>STATUS · OPERATIONAL &nbsp; KR/EN</div>
+</div></header>
+
+<div class="wr"><section class="hero"><div class="hero__g">
+  <div>
+    <div class="ey">K1 INTEGRATED COMMISSIONING SYSTEM</div>
+    <h1>프로젝트의<br>마지막 순간,<br>K1이 완성합니다</h1>
+    <p>시스템을 기동하고 성능을 검증하는 통합 시운전 실행 체계.</p>
+    <div class="read"><div><div class="v">20<em>YRS</em></div><div class="l mono">시운전 업력</div></div><div><div class="v">180<em>억</em></div><div class="l mono">2025 매출</div></div><div><div class="v">260<em>명</em></div><div class="l mono">전문 인력</div></div></div>
+  </div>
+  <svg class="sch" viewBox="0 0 460 340" fill="none" width="100%">
+    <rect x="1" y="1" width="458" height="338" stroke="rgba(140,165,190,.2)"/>
+    <g stroke="#F0A227" stroke-width="1.4">
+      <path d="M90 80 H230"/><path d="M230 80 V170"/><path d="M230 170 H370"/><path d="M90 170 H230"/><path d="M230 170 V260"/><path d="M90 260 H230"/>
+    </g>
+    <g fill="#121A24" stroke="#F0A227" stroke-width="1.4">
+      <rect x="30" y="60" width="120" height="40" rx="3"/><rect x="310" y="150" width="120" height="40" rx="3"/>
+      <rect x="30" y="150" width="120" height="40" rx="3"/><rect x="30" y="240" width="120" height="40" rx="3"/>
+    </g>
+    <circle cx="230" cy="80" r="5" fill="#F0A227"/><circle cx="230" cy="170" r="5" fill="#F0A227"/><circle cx="230" cy="260" r="5" fill="#F0A227"/>
+    <g fill="#EAF0F6" font-size="12" font-weight="600" letter-spacing="1">
+      <text x="52" y="85">POWER-UP</text><text x="42" y="175">CONTROL</text><text x="56" y="265">TEST</text><text x="326" y="175">HAND-OVER</text>
+    </g>
+    <text x="20" y="326" fill="#7C8B9A" font-size="10" letter-spacing="2">COMMISSIONING SEQUENCE — SCHEMATIC</text>
+  </svg>
+</div></section></div>
+
+<div class="wr"><section class="cap">
+  <div class="kick"><span class="n">／ 02 CAPABILITY</span><h2>핵심 역량 — 시운전 실행 체계</h2></div>
+  <div class="pmap">
+    <div class="pnode"><div class="no mono">01</div><h3>Full-Ship Commissioning</h3><p>선박 전체 전력 및 제어 시스템 통합 시운전 수행 역량</p></div>
+    <div class="pnode"><div class="no mono">02</div><h3>High Voltage System</h3><p>Generator · Transformer · HV Switchgear 시험 및 계통 연계</p></div>
+    <div class="pnode"><div class="no mono">03</div><h3>Integrated E&amp;I</h3><p>전기 · 계장 시스템 인터페이스 및 시스템 검증</p></div>
+  </div>
+</section></div>
+
+<section class="biz"><div class="wr">
+  <div class="kick"><span class="n">／ 03 BUSINESS</span><h2>One-Stop Commissioning</h2></div>
+  <div class="flow"><b>POWER</b> → CONTROL → TEST → <b>HAND-OVER</b> &nbsp;·&nbsp; 전 영역 통합 시운전 파이프라인</div>
+  <div class="pipe">
+    <div class="stage"><div class="no">01</div><h4>전기</h4><div class="en">Electrical</div><div class="ar">→</div></div>
+    <div class="stage"><div class="no">02</div><h4>기계</h4><div class="en">Mechanical</div><div class="ar">→</div></div>
+    <div class="stage"><div class="no">03</div><h4>계장</h4><div class="en">Instrument</div><div class="ar">→</div></div>
+    <div class="stage"><div class="no">04</div><h4>공조</h4><div class="en">HVAC</div><div class="ar">→</div></div>
+    <div class="stage"><div class="no">05</div><h4>항해통신</h4><div class="en">Nav·Telecom</div><div class="ar">→</div></div>
+    <div class="stage"><div class="no">06</div><h4>친환경</h4><div class="en">FGSS/ALS</div></div>
+  </div>
+</div></section>
+
+<div class="wr"><footer class="foot">
+  <h2>프로젝트의 마지막 순간,<br><em>케이원이 함께하겠습니다</em></h2>
+  <div class="cta">문의하기 →</div>
+  <div class="grid">
+    <div><h4>K1 OCEAN</h4><p>통합 시운전 전문 기업 (주)케이원</p></div>
+    <div><h4>Sitemap</h4><a href="#">회사소개</a><a href="#">사업분야</a><a href="#">프로젝트</a></div>
+    <div><h4>Contact</h4><p class="mono">055-736-5959</p><p class="mono">k1ocean@k1tnc.co.kr</p></div>
+    <div><h4>Location</h4><p class="mono">35.02°N 128.70°E</p><p>거제 · 영암 · 울산</p></div>
+  </div>
+  <div class="co mono">© 2026 (주)케이원 · K1 OCEAN — INTEGRATED COMMISSIONING</div>
+</footer></div>
+</body></html>
