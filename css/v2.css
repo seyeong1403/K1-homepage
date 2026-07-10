@@ -221,7 +221,8 @@ body.lock{overflow:hidden}
 /* 8.4vw → 1286px 부터 상한(108px)에 도달.
    기존 7.1vw 는 1521px 부터라 1280~1520px(노트북·확대 환경)에서만 91~107px 로 작아졌다.
    이제 데스크톱 전 구간에서 108px 로 동일하게 보인다. */
-.hero h1{font-size:clamp(40px,8.4vw,108px);font-weight:800;line-height:1.01;letter-spacing:-.052em}
+/* 7.5vw 는 1280px 부터 상한(96px)에 도달한다 — 데스크톱 전 구간에서 같은 크기 */
+.hero h1{font-size:clamp(38px,7.5vw,96px);font-weight:800;line-height:1.01;letter-spacing:-.05em}
 .hero h1 i{font-style:normal;color:var(--orange)}
 .hero__sub{margin-top:32px;font-size:clamp(16px,1.5vw,21px);line-height:1.75;color:rgba(228,236,244,.9);max-width:46ch;
   opacity:0;transform:translateY(18px);transition:opacity 1s var(--e2) .5s,transform 1s var(--e2) .5s}
@@ -676,14 +677,16 @@ body.lock{overflow:hidden}
 .board__empty p{margin-top:14px;font-size:15.5px;color:var(--ink-mut);line-height:1.8}
 
 /* ---- BUSINESS detail ---- */
-.bizd__head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,50px);align-items:end;margin-bottom:clamp(38px,4.5vw,66px);padding-bottom:clamp(28px,3vw,44px);border-bottom:1px solid var(--line-l)}
+.bizd__head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,50px);align-items:end;margin-bottom:clamp(46px,5.4vw,84px)}
 .bizd__head .en{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
 .bizd__head h2{margin-top:14px;font-size:clamp(28px,3.6vw,52px);font-weight:800;letter-spacing:-.035em;line-height:1.06}
 .bizd__head p{font-size:16.5px;color:var(--ink-mut);line-height:1.8}
-.sec--dark .bizd__head{border-bottom-color:var(--line-d)}.sec--dark .bizd__head h2{color:#fff}.sec--dark .bizd__head p{color:var(--dim)}
+.sec--dark .bizd__head h2{color:#fff}.sec--dark .bizd__head p{color:var(--dim)}
 .bizd__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
 .bizd__i{padding:clamp(26px,2.4vw,36px) clamp(22px,2vw,34px) clamp(30px,3vw,42px) 0;border-top:1px solid var(--line-l)}
 .sec--dark .bizd__i{border-top-color:var(--line-d)}
+/* 타이틀 바로 아래에 가는 선이 겹쳐 보이지 않도록 첫 행의 윗줄만 감춘다 (행 구분선은 유지) */
+.bizd__grid>:nth-child(-n+3){border-top-width:0}
 .bizd__i .n{font-size:15px;font-weight:800;color:var(--orange);font-variant-numeric:tabular-nums}
 .bizd__i h3{margin-top:12px;font-size:clamp(19px,1.8vw,24px);font-weight:800;letter-spacing:-.02em}
 .sec--dark .bizd__i h3{color:#fff}
@@ -753,6 +756,7 @@ body.lock{overflow:hidden}
   .cmsg{grid-template-columns:1fr;gap:34px}.cmsg__img{aspect-ratio:16/10;max-width:520px}
   .cwrap{grid-template-columns:1fr;gap:40px}
   .tech,.bizd__grid{grid-template-columns:repeat(2,1fr)}
+  .bizd__grid>:nth-child(3){border-top-width:1px}.bizd__grid>:nth-child(-n+2){border-top-width:0}
   .prin__row{grid-template-columns:90px 1fr;gap:14px 24px}.prin__row p{grid-column:2}
   .proc{grid-template-columns:1fr 1fr}.proc__i:nth-child(2)::after{display:none}
   .loc{grid-template-columns:1fr}.loc__i{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;align-items:center}.loc__i .viz,.loc__i .loc__map{margin-bottom:0}
@@ -777,6 +781,7 @@ body.lock{overflow:hidden}
 }
 @media (max-width:560px){
   .tech,.bizd__grid,.proc,.hist,.gall,.cform__row{grid-template-columns:1fr}
+  .bizd__grid>:nth-child(-n+3){border-top-width:1px}.bizd__grid>:first-child{border-top-width:0}
   .prin__row{grid-template-columns:1fr;gap:10px}.prin__row p{grid-column:1}
   .loc__i{grid-template-columns:1fr}
   .cinfo__i{grid-template-columns:28px 1fr}
