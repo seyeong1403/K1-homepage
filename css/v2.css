@@ -94,6 +94,15 @@ em{font-style:normal;color:var(--orange)}
 .mask>span{display:block;transform:translateY(115%);transition:transform 1.05s var(--e2)}
 .in .mask>span,.mask.in>span{transform:none}
 
+/* SplitText-style word reveal on section headings (ref: 110 Hyundai Transys) */
+.d2 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.1em;margin-bottom:-.1em}
+.d2 .wi{display:inline-block;transform:translateY(112%);transition:transform .95s var(--e2)}
+.d2.rv{transform:none}                       /* y 이동은 단어 슬라이드가 담당 */
+.in .d2 .wi,.d2.in .wi{transform:none}
+
+/* scroll parallax layers (ref: 062 HHI hero · 096 Wonkang full-bleed) */
+.hero__media,.bizp__viz{will-change:transform}
+
 /* ---- shared design-visual (photo placeholder that reads as intentional) ---- */
 .viz{position:relative;overflow:hidden;isolation:isolate;
   background:
@@ -196,7 +205,7 @@ body.lock{overflow:hidden}
    ===================================================================== */
 .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;
   background:var(--bg0);color:#fff;overflow:hidden;isolation:isolate}
-.hero__media{position:absolute;inset:0;z-index:-3;overflow:hidden}
+.hero__media{position:absolute;inset:-7% 0;z-index:-3;overflow:hidden}
 .hero__media img{width:100%;height:100%;object-fit:cover;object-position:68% center;animation:heroZoom 20s var(--e1) forwards}
 @keyframes heroZoom{from{transform:scale(1.12)}to{transform:scale(1)}}
 .hero__media::before{content:"";position:absolute;inset:0;background:
@@ -308,7 +317,7 @@ body.lock{overflow:hidden}
 .biz__intro .d2{margin-top:26px;color:#fff;max-width:18ch}
 .biz__intro .lead{margin-top:26px}
 .bizp{position:relative;min-height:clamp(560px,84vh,900px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
-.bizp__viz{position:absolute;inset:0;z-index:-2}
+.bizp__viz{position:absolute;inset:-7% 0;z-index:-2}
 .bizp__viz img{transform:scale(1.08);transition:transform 1.4s var(--e1)}
 .bizp.in .bizp__viz img{transform:scale(1)}
 .bizp__scrim{position:absolute;inset:0;z-index:-1;background:
@@ -457,7 +466,8 @@ body.lock{overflow:hidden}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *{animation:none!important}
-  .rv,.stg>*,.mask>span,.hero__sub,.hero__act,.dom__b,.bizp__viz img,.kes__c::after{opacity:1!important;transform:none!important;transition:none!important}
+  .rv,.stg>*,.mask>span,.hero__sub,.hero__act,.dom__b,.bizp__viz img,.kes__c::after,.d2 .wi{opacity:1!important;transform:none!important;transition:none!important}
+  .hero__media,.bizp__viz{transform:none!important;will-change:auto}
   .cap__node p{max-height:none!important;opacity:1!important;margin-top:14px!important}
 }
 

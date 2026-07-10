@@ -57,14 +57,97 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && drawer.classList.contains('open')) setDrawer(false); });
   }
 
+  /* SplitText-style word reveal on section headings (ref: 110 Hyundai Transys)
+     텍스트 노드만 단어 단위로 감싸므로 <br>·<em> 등 마크업은 그대로 보존된다. */
+  var splitWords = function (el) {
+    if (el.getAttribute('data-split')) return;
+    el.setAttribute('data-split', '1');
+    var idx = 0;
+    var walk = function (node) {
+      [].slice.call(node.childNodes).forEach(function (n) {
+        if (n.nodeType === 3) {
+          if (!n.nodeValue.trim()) return;
+          var frag = document.createDocumentFragment();
+          n.nodeValue.split(/(\s+)/).forEach(function (tok) {
+            if (!tok) return;
+            if (/^\s+$/.test(tok)) { frag.appendChild(document.createTextNode(tok)); return; }
+            var w = document.createElement('span'); w.className = 'w';
+            var i = document.createElement('span'); i.className = 'wi'; i.textContent = tok;
+            i.style.transitionDelay = (idx * 0.05).toFixed(2) + 's'; idx++;
+            w.appendChild(i); frag.appendChild(w);
+          });
+          node.replaceChild(frag, n);
+        } else if (n.nodeType === 1 && n.tagName !== 'BR') { walk(n); }
+      });
+    };
+    walk(el);
+  };
+  if (!reduce) [].slice.call(document.querySelectorAll('.d2')).forEach(splitWords);
+
   /* reveal observer */
-  var items = document.querySelectorAll('.rv, .stg, .mask');
+  var items = document.querySelectorAll('.rv, .stg, .mask, .d2');
   if (reduce || !('IntersectionObserver' in window)) { items.forEach(function (el) { el.classList.add('in'); }); }
   else {
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
     }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
     items.forEach(function (el) { io.observe(el); });
+  }
+
+  /* scroll parallax on full-bleed image layers (ref: 062 HHI hero · 096 Wonkang) */
+  var pxLayers = [].slice.call(document.querySelectorAll('.hero__media, .bizp__viz'));
+  if (!reduce && pxLayers.length) {
+    /* 레이어는 위아래로 7%씩 확장돼 있다. 진폭을 호스트 높이의 5%로 두면
+       어떤 뷰포트에서도 오버스캔을 넘지 않아 여백이 드러나지 않는다. */
+    var AMP_RATIO = 0.05, ticking = false;
+    var paint = function () {
+      var vh = window.innerHeight;
+      pxLayers.forEach(function (el) {
+        var host = el.parentElement;
+        var r = host.getBoundingClientRect();
+        if (r.bottom < -120 || r.top > vh + 120) return;
+        var p = ((r.top + r.height / 2) - vh / 2) / (vh / 2 + r.height / 2); // -1..1
+        var amp = r.height * AMP_RATIO;
+        el.style.transform = 'translate3d(0,' + (-p * amp).toFixed(1) + 'px,0)';
+      });
+      ticking = false;
+    };
+    var onPx = function () { if (!ticking) { ticking = true; requestAnimationFrame(paint); } };
+    window.addEventListener('scroll', onPx, { passive: true });
+    window.addEventListener('resize', onPx);
+    paint();
+  }
+
+  /* smooth scroll — Lenis (refs: 096 Wonkang · 110 Transys · 063 Doosan)
+     CDN 실패 시 네이티브 스크롤로 그대로 동작한다. */
+  if (!reduce) {
+    var ls = document.createElement('script');
+    ls.src = 'https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js';
+    ls.async = true;
+    ls.onload = function () {
+      if (!window.Lenis) return;
+      var lenis = new window.Lenis({
+        duration: 1.05,
+        easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+        smoothWheel: true, touchMultiplier: 1.6
+      });
+      document.documentElement.style.scrollBehavior = 'auto';
+      var raf = function (t) { lenis.raf(t); requestAnimationFrame(raf); };
+      requestAnimationFrame(raf);
+      /* 앵커 이동은 Lenis로 (고정 헤더 높이만큼 보정) */
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href^="#"]');
+        if (!a || a.classList.contains('skip')) return;
+        var id = a.getAttribute('href');
+        if (!id || id.length < 2) return;
+        var target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        lenis.scrollTo(target, { offset: -((head && head.offsetHeight) || 80) - 8 });
+      });
+      window.__lenis = lenis;
+    };
+    document.head.appendChild(ls);
   }
 
   /* count up */
