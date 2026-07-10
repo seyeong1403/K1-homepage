@@ -118,16 +118,17 @@ em{font-style:normal;color:var(--orange)}
 .viz--paper .viz__art{color:rgba(30,58,84,.14)}
 .viz--paper .viz__tag{color:var(--ink-mut)}
 
-/* icons (mask + currentColor) */
-.ic{display:inline-block;background:currentColor;flex:none;vertical-align:middle;
-  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain}
-.i-quality{-webkit-mask-image:url(../assets/icons/cert-quality.svg);mask-image:url(../assets/icons/cert-quality.svg)}
-.i-eco{-webkit-mask-image:url(../assets/icons/cert-eco.svg);mask-image:url(../assets/icons/cert-eco.svg)}
-.i-safety{-webkit-mask-image:url(../assets/icons/cert-safety.svg);mask-image:url(../assets/icons/cert-safety.svg)}
-.i-license{-webkit-mask-image:url(../assets/icons/cert-license.svg);mask-image:url(../assets/icons/cert-license.svg)}
-.i-trust{-webkit-mask-image:url(../assets/icons/val-trust.svg);mask-image:url(../assets/icons/val-trust.svg)}
-.i-collab{-webkit-mask-image:url(../assets/icons/val-collab.svg);mask-image:url(../assets/icons/val-collab.svg)}
-.i-responsibility{-webkit-mask-image:url(../assets/icons/val-responsibility.svg);mask-image:url(../assets/icons/val-responsibility.svg)}
+/* icons — SVG에 오렌지 fill을 직접 넣고 background-image로 표시한다.
+   (CSS mask 방식은 일부 브라우저에서 공간만 차지하고 투명하게 렌더되는 문제가 있었다) */
+.ic{display:inline-block;flex:none;vertical-align:middle;
+  background-repeat:no-repeat;background-position:center;background-size:contain}
+.i-quality{background-image:url(../assets/icons/cert-quality.svg)}
+.i-eco{background-image:url(../assets/icons/cert-eco.svg)}
+.i-safety{background-image:url(../assets/icons/cert-safety.svg)}
+.i-license{background-image:url(../assets/icons/cert-license.svg)}
+.i-trust{background-image:url(../assets/icons/val-trust.svg)}
+.i-collab{background-image:url(../assets/icons/val-collab.svg)}
+.i-responsibility{background-image:url(../assets/icons/val-responsibility.svg)}
 
 /* =====================================================================
    Header — adaptive (transparent on dark → solid light over paper) · mega (110)
@@ -435,7 +436,10 @@ body.lock{overflow:hidden}
 .foot__cta .wrap{padding-block:clamp(80px,10vw,150px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:34px}
 .foot__cta h2{font-size:clamp(32px,4.4vw,66px);font-weight:800;letter-spacing:-.035em;line-height:1.04;color:#fff}
 .foot__top{padding-block:clamp(56px,6vw,88px);display:grid;grid-template-columns:1.4fr 3fr;gap:clamp(34px,5vw,80px)}
-.foot__brand img{height:40px;margin-bottom:22px}
+/* 푸터 브랜드: 상단 헤더처럼 로고 옆에 상호를 붙인다 */
+.foot__logo{display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.foot__logo img{height:40px}
+.foot__logo b{font-size:19px;font-weight:800;letter-spacing:-.02em;color:#fff;white-space:nowrap}
 .foot__brand p{font-size:15px;color:var(--dim-2);max-width:34ch;line-height:1.8}
 .foot__map{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
 .foot__col h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:16px}
@@ -500,10 +504,10 @@ body.lock{overflow:hidden}
    ============  SUBPAGES (v2 language)  ============
    about / business / projects / recruit / news / contact
    ===================================================================== */
-.i-phone{-webkit-mask-image:url(../assets/icons/contact-phone.svg);mask-image:url(../assets/icons/contact-phone.svg)}
-.i-fax{-webkit-mask-image:url(../assets/icons/contact-fax.svg);mask-image:url(../assets/icons/contact-fax.svg)}
-.i-mail{-webkit-mask-image:url(../assets/icons/contact-mail.svg);mask-image:url(../assets/icons/contact-mail.svg)}
-.i-location{-webkit-mask-image:url(../assets/icons/contact-location.svg);mask-image:url(../assets/icons/contact-location.svg)}
+.i-phone{background-image:url(../assets/icons/contact-phone.svg)}
+.i-fax{background-image:url(../assets/icons/contact-fax.svg)}
+.i-mail{background-image:url(../assets/icons/contact-mail.svg)}
+.i-location{background-image:url(../assets/icons/contact-location.svg)}
 .sub section[id]{scroll-margin-top:150px}
 .sub .sec{padding-block:clamp(80px,10vw,150px)}
 
