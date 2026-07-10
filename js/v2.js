@@ -59,10 +59,10 @@
 
   /* SplitText-style word reveal on section headings (ref: 110 Hyundai Transys)
      텍스트 노드만 단어 단위로 감싸므로 <br>·<em> 등 마크업은 그대로 보존된다. */
-  var splitWords = function (el) {
+  var splitWords = function (el, base) {
     if (el.getAttribute('data-split')) return;
     el.setAttribute('data-split', '1');
-    var idx = 0;
+    var idx = 0, b = base || 0;
     var walk = function (node) {
       [].slice.call(node.childNodes).forEach(function (n) {
         if (n.nodeType === 3) {
@@ -73,7 +73,7 @@
             if (/^\s+$/.test(tok)) { frag.appendChild(document.createTextNode(tok)); return; }
             var w = document.createElement('span'); w.className = 'w';
             var i = document.createElement('span'); i.className = 'wi'; i.textContent = tok;
-            i.style.transitionDelay = (idx * 0.05).toFixed(2) + 's'; idx++;
+            i.style.transitionDelay = (b + idx * 0.05).toFixed(2) + 's'; idx++;
             w.appendChild(i); frag.appendChild(w);
           });
           node.replaceChild(frag, n);
@@ -82,7 +82,11 @@
     };
     walk(el);
   };
-  if (!reduce) [].slice.call(document.querySelectorAll('.d2')).forEach(splitWords);
+  if (!reduce) {
+    [].slice.call(document.querySelectorAll('.d2')).forEach(function (el) { splitWords(el, 0); });
+    /* Business 패널 제목은 01 / ELECTRICAL 뒤에 이어지도록 시작 딜레이를 준다 */
+    [].slice.call(document.querySelectorAll('.bizp h3')).forEach(function (el) { splitWords(el, 0.24); });
+  }
 
   /* reveal observer */
   var items = document.querySelectorAll('.rv, .stg, .mask, .d2');

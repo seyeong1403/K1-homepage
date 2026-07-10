@@ -94,11 +94,11 @@ em{font-style:normal;color:var(--orange)}
 .mask>span{display:block;transform:translateY(115%);transition:transform 1.05s var(--e2)}
 .in .mask>span,.mask.in>span{transform:none}
 
-/* SplitText-style word reveal on section headings (ref: 110 Hyundai Transys) */
-.d2 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.1em;margin-bottom:-.1em}
-.d2 .wi{display:inline-block;transform:translateY(112%);transition:transform .95s var(--e2)}
+/* SplitText-style word reveal (ref: 110 Hyundai Transys) — .d2 와 .bizp h3 에 적용 */
+.w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.1em;margin-bottom:-.1em}
+.wi{display:inline-block;transform:translateY(112%);transition:transform .95s var(--e2)}
 .d2.rv{transform:none}                       /* y 이동은 단어 슬라이드가 담당 */
-.in .d2 .wi,.d2.in .wi{transform:none}
+.in .wi,.d2.in .wi{transform:none}
 
 /* scroll parallax layers (ref: 062 HHI hero · 096 Wonkang full-bleed) */
 .hero__media,.bizp__viz{will-change:transform}
@@ -339,6 +339,21 @@ body.lock{overflow:hidden}
 .bizp li::before{content:"";position:absolute;left:0;top:22px;width:10px;height:1.5px;background:var(--orange)}
 .bizp:nth-child(even) li::before{left:auto;right:0}
 
+/* 패널 내부 텍스트 계단 리빌.
+   패널 전체(.rv)를 움직이면 풀블리드 이음새가 생기므로 패널은 고정하고
+   이미지 줌 + 내부 텍스트가 모션을 담당한다. */
+.bizp.rv{opacity:1;transform:none}
+.bizp__no,.bizp__en,.bizp li{opacity:0;transform:translateY(24px);
+  transition:opacity .85s var(--e2),transform .85s var(--e2)}
+.bizp ul{opacity:0;transition:opacity .7s var(--e2) .34s}
+.bizp.in ul{opacity:1}
+.bizp.in .bizp__no{opacity:1;transform:none;transition-delay:.04s}
+.bizp.in .bizp__en{opacity:1;transform:none;transition-delay:.15s}
+.bizp.in li{opacity:1;transform:none}
+.bizp.in li:nth-child(1){transition-delay:.44s}
+.bizp.in li:nth-child(2){transition-delay:.53s}
+.bizp.in li:nth-child(3){transition-delay:.62s}
+
 /* =====================================================================
    Execution (KES) — DATA-CENTRIC (oversized numbers + proportional bars)
    ===================================================================== */
@@ -495,7 +510,8 @@ body.lock{overflow:hidden}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *{animation:none!important}
-  .rv,.stg>*,.mask>span,.hero__sub,.hero__act,.dom__b,.bizp__viz img,.kes__c::after,.d2 .wi{opacity:1!important;transform:none!important;transition:none!important}
+  .rv,.stg>*,.mask>span,.hero__sub,.hero__act,.dom__b,.bizp__viz img,.kes__c::after,.wi,
+  .bizp__no,.bizp__en,.bizp li,.bizp ul{opacity:1!important;transform:none!important;transition:none!important}
   .hero__media,.bizp__viz{transform:none!important;will-change:auto}
   .cap__node p{max-height:none!important;opacity:1!important;margin-top:14px!important}
 }
