@@ -586,36 +586,51 @@ body.lock{overflow:hidden}
 
 /* ---- ABOUT: org chart — SHAPE-BASED TREE (root box → division boxes → team boxes) ---- */
 .orgc{position:relative}
-/* root: filled navy box (rounded) */
-.orgc__root{display:table;margin-inline:auto;background:var(--bg0);color:#fff;padding:22px 54px;
-  border-radius:14px;text-align:center;
-  font-size:clamp(18px,1.8vw,25px);font-weight:800;letter-spacing:-.02em;position:relative;z-index:1}
-.orgc__stem{width:2px;height:46px;background:var(--line-l2);margin:0 auto}
-.orgc__branches{--g:clamp(24px,3.4vw,56px);display:grid;grid-template-columns:1fr 1fr;gap:var(--g);position:relative;padding-top:46px}
-/* horizontal bar spans column-center → column-center (accounts for the grid gap) */
-.orgc__branches::before{content:"";position:absolute;top:0;left:calc((100% - var(--g))/4);right:calc((100% - var(--g))/4);height:2px;background:var(--line-l2)}
-.orgc__branch{position:relative}
-.orgc__branch::before{content:"";position:absolute;top:-46px;left:50%;transform:translateX(-50%);width:2px;height:46px;background:var(--line-l2)}
-/* division box: 케이원 / 케이원오션 — 오렌지 라운드 도형 */
-.orgc__node{background:var(--orange);color:#fff;border-radius:14px;
-  padding:clamp(20px,2vw,28px) clamp(18px,2vw,28px);text-align:center;
-  box-shadow:0 14px 30px -20px rgba(226,87,31,.7)}
-.orgc__node h4{font-size:clamp(20px,1.9vw,27px);font-weight:800;letter-spacing:-.02em;color:#fff}
-.orgc__node .sub{margin-top:8px;font-size:13px;letter-spacing:.02em;color:rgba(255,255,255,.86)}
-/* team boxes hanging off a vertical spine */
-.orgc__teams{--pl:clamp(30px,3vw,50px);--gp:12px;--sx:16px;position:relative;margin-top:44px;padding-left:var(--pl);display:grid;gap:var(--gp)}
-.orgc__teams li{position:relative;background:#fff;border:1px solid var(--line-l);border-left:3px solid var(--orange);
-  border-radius:10px;padding:15px 18px;font-size:15.5px;font-weight:600;color:var(--ink-2);
-  transition:transform .35s var(--e1),box-shadow .35s var(--e1),background .35s}
-/* spine segment per box, extended by half the gap so segments join into one line */
-.orgc__teams li::after{content:"";position:absolute;left:calc(var(--sx) - var(--pl) - 1px);
+/* 피그마 구성과 동일한 가로(좌→우) 트리:
+   [주식회사 케이원] ─┬─ [케이원]     ─ 팀 칩
+                      └─ [케이원오션] ─ 팀 칩            */
+.orgc{--bl:clamp(22px,2.4vw,34px);   /* 분배 세로바 ↔ 부문박스 간격 */
+  --gp:clamp(18px,2.2vw,30px);       /* 브랜치 간 세로 간격 */
+  --hg:clamp(20px,2.4vw,34px);       /* 부문박스 ↔ 팀칩 간격 */
+  display:grid;grid-template-columns:clamp(140px,13vw,170px) clamp(28px,3vw,44px) 1fr;align-items:stretch}
+
+/* root: 왼쪽 세로 긴 네이비 박스 */
+.orgc__root{display:grid;place-items:center;text-align:center;background:var(--bg0);color:#fff;
+  border-radius:14px;padding:24px 16px;line-height:1.35;
+  font-size:clamp(16px,1.35vw,20px);font-weight:800;letter-spacing:-.02em}
+/* root → 분배 세로바 로 이어지는 가로선 */
+.orgc__stem{align-self:center;width:100%;height:2px;background:var(--line-l2)}
+
+/* grid-auto-rows:1fr — 두 브랜치 높이를 균등하게 맞춰야 root 가로선이
+   두 부문 중심의 정확한 중점에 닿는다 */
+.orgc__branches{position:relative;display:grid;grid-auto-rows:1fr;gap:var(--gp);padding-left:var(--bl)}
+.orgc__branch{position:relative;display:grid;grid-template-columns:minmax(0,244px) 1fr;gap:var(--hg);align-items:center}
+/* 세로 분배바: 브랜치별 구간으로 그려 첫/끝을 각 부문 중심에서 끊는다 */
+.orgc__branch::before{content:"";position:absolute;left:calc(-1 * var(--bl));
   top:calc(var(--gp) / -2);bottom:calc(var(--gp) / -2);width:2px;background:var(--line-l2)}
-.orgc__teams li:first-child::after{top:-44px}
-.orgc__teams li:last-child::after{bottom:50%}
-/* elbow: spine centre → box left edge */
-.orgc__teams li::before{content:"";position:absolute;left:calc(var(--sx) - var(--pl));top:50%;
-  width:calc(var(--pl) - var(--sx));height:1px;background:var(--line-l2);transform:translateY(-50%)}
-.orgc__teams li:hover{background:var(--paper2);transform:translateX(3px);box-shadow:0 10px 26px -16px rgba(11,24,38,.4)}
+.orgc__branch:first-child::before{top:50%}
+.orgc__branch:last-child::before{bottom:50%}
+/* 세로바 → 부문박스 가로 스텁 */
+.orgc__branch::after{content:"";position:absolute;left:calc(-1 * var(--bl) + 1px);top:50%;transform:translateY(-50%);
+  width:calc(var(--bl) - 1px);height:2px;background:var(--line-l2)}
+
+/* division box: 케이원 / 케이원오션 — 오렌지 라운드 도형 */
+.orgc__node{position:relative;background:var(--orange);color:#fff;border-radius:14px;
+  padding:clamp(18px,1.8vw,24px) clamp(16px,1.8vw,24px);text-align:center;
+  box-shadow:0 14px 30px -20px rgba(226,87,31,.7)}
+.orgc__node h4{font-size:clamp(19px,1.8vw,25px);font-weight:800;letter-spacing:-.02em;color:#fff}
+.orgc__node .sub{margin-top:7px;font-size:12.5px;line-height:1.5;letter-spacing:.02em;color:rgba(255,255,255,.86)}
+/* 부문박스 → 팀칩 가로 연결선 */
+.orgc__node::after{content:"";position:absolute;left:100%;top:50%;transform:translateY(-50%);
+  width:var(--hg);height:2px;background:var(--line-l2)}
+
+/* teams: 가로로 흐르는 라운드 칩 (줄바꿈) */
+.orgc__teams{display:flex;flex-wrap:wrap;align-content:center;gap:10px}
+.orgc__teams li{background:#fff;border:1px solid var(--line-l);border-radius:10px;
+  padding:11px 16px;font-size:14.5px;font-weight:600;color:var(--ink-2);white-space:nowrap;
+  transition:transform .3s var(--e1),box-shadow .3s var(--e1),border-color .3s,color .3s}
+.orgc__teams li:hover{border-color:var(--orange);color:var(--orange-ink);
+  transform:translateY(-2px);box-shadow:0 10px 22px -14px rgba(11,24,38,.45)}
 
 /* ---- NEWS: notice board list ---- */
 .board{border-top:2px solid var(--ink)}
@@ -723,10 +738,12 @@ body.lock{overflow:hidden}
   .hist{grid-template-columns:1fr 1fr}
   .def__row{grid-template-columns:1fr;gap:6px;padding:18px 0}
   .mv{grid-template-columns:1fr}
-  .orgc__branches{grid-template-columns:1fr;gap:44px;padding-top:46px}
-  .orgc__branches::before{display:none}
-  .orgc__branch:first-child::before{top:-46px;height:46px}
-  .orgc__branch:last-child::before{display:none}
+  /* 좁은 화면에서는 가로 트리를 세로로 쌓는다 */
+  .orgc{grid-template-columns:1fr}
+  .orgc__stem{width:2px;height:34px;margin:0 auto;justify-self:center}
+  .orgc__branches{padding-left:0;gap:26px}
+  .orgc__branch{grid-template-columns:1fr;gap:16px}
+  .orgc__branch::before,.orgc__branch::after,.orgc__node::after{display:none}
   .gall{grid-template-columns:1fr 1fr}
   .board__head,.board__row{grid-template-columns:70px 1fr 110px;gap:14px}
 }
