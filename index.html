@@ -3,25 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>(주)케이원 · K1 OCEAN — 통합 시운전 전문 기업</title>
+<title>(주)케이원 · K1 OCEAN — 통합 시운전 전문 기업 (v2)</title>
 <meta name="description" content="해양플랜트·조선·에너지 산업의 시스템 완성과 성능 구현을 책임지는 통합 시운전 전문 기업, (주)케이원.">
 <link rel="icon" type="image/png" href="assets/favicon.png">
-<link rel="apple-touch-icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/v2.css">
 </head>
 <body>
+<a class="skip" href="#top">본문 바로가기</a>
 
-<!-- ============ HEADER ============ -->
+<!-- ============ HEADER (adaptive dark/light) ============ -->
 <header class="head" id="head">
   <div class="head__in">
     <a class="brand" href="#top" aria-label="(주)케이원 · K1 OCEAN">
-      <img class="l-dark" src="assets/logo-k1ocean-dark.png" alt="K1 OCEAN">
-      <img class="l-light" src="assets/logo-k1ocean.png" alt="K1 OCEAN">
-      <span class="brand__name">(주)케이원</span>
+      <img class="brand--dark" src="assets/logo-k1ocean-dark.png" alt="K1 OCEAN">
+      <img class="brand--light" src="assets/logo-k1ocean.png" alt="K1 OCEAN">
+      <b>(주)케이원</b>
     </a>
-    <div class="navwrap">
+    <div class="gnbwrap">
       <nav aria-label="주 메뉴"><ul class="gnb">
         <li><a href="about.html">회사소개</a></li>
         <li><a href="business.html">사업분야</a></li>
@@ -36,226 +36,321 @@
         <div class="mega__col"><h5>프로젝트 실적</h5><a href="projects.html#domestic">국내 프로젝트</a><a href="projects.html#overseas">해외 프로젝트</a><a href="projects.html#clients">주요 고객사</a></div>
         <div class="mega__col"><h5>인재채용</h5><a href="recruit.html">채용안내</a><a href="recruit.html#jobs">채용공고</a></div>
         <div class="mega__col"><h5>홍보센터</h5><a href="news.html">게시판</a><a href="news.html#gallery">갤러리</a></div>
-        <div class="mega__col"><h5>고객문의</h5><a href="contact.html">문의하기</a><a href="contact.html#map">오시는 길</a></div>
+        <div class="mega__col"><h5>고객문의</h5><a href="contact.html#inquiry">문의하기</a><a href="contact.html#map">오시는 길</a></div>
       </div></div>
     </div>
     <div class="head__r">
-      <span class="lang"><b>KR</b> · EN</span>
+      <span class="head__lang"><b>KR</b> · EN</span>
       <a class="head__cta" href="contact.html">고객문의</a>
-      <button class="burger" id="burger" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+      <button class="burger" id="burger" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
+<!-- ============ MOBILE DRAWER ============ -->
 <div class="drawer" id="drawer" aria-hidden="true">
-  <button class="drawer__x" id="drawerX" aria-label="닫기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round"/></svg></button>
-  <ul>
-    <li><a href="about.html">회사소개</a><div class="drawer__sub"><a href="about.html#ceo">CEO 인사말</a><a href="about.html#overview">회사개요</a><a href="about.html#org">조직도</a></div></li>
-    <li><a href="business.html">사업분야</a><div class="drawer__sub"><a href="business.html#commissioning">시운전</a><a href="business.html#support">기술지원</a><a href="business.html#maintenance">유지보수</a></div></li>
-    <li><a href="projects.html">프로젝트 실적</a><div class="drawer__sub"><a href="projects.html#domestic">국내</a><a href="projects.html#overseas">해외</a><a href="projects.html#clients">주요 고객사</a></div></li>
-    <li><a href="recruit.html">인재채용</a><div class="drawer__sub"><a href="recruit.html">채용안내</a><a href="recruit.html#jobs">채용공고</a></div></li>
-    <li><a href="news.html">홍보센터</a><div class="drawer__sub"><a href="news.html">게시판</a><a href="news.html#gallery">갤러리</a></div></li>
-    <li><a href="contact.html">고객문의</a><div class="drawer__sub"><a href="contact.html">문의하기</a><a href="contact.html#map">오시는 길</a></div></li>
-  </ul>
+  <div class="drawer__grp"><b><a href="about.html">회사소개</a></b><div class="sub"><a href="about.html#ceo">CEO 인사말</a><a href="about.html#overview">회사개요</a><a href="about.html#org">조직도</a></div></div>
+  <div class="drawer__grp"><b><a href="business.html">사업분야</a></b><div class="sub"><a href="business.html#commissioning">시운전</a><a href="business.html#support">기술지원</a><a href="business.html#maintenance">유지보수</a></div></div>
+  <div class="drawer__grp"><b><a href="projects.html">프로젝트 실적</a></b><div class="sub"><a href="projects.html#domestic">국내</a><a href="projects.html#overseas">해외</a><a href="projects.html#clients">주요 고객사</a></div></div>
+  <div class="drawer__grp"><b><a href="recruit.html">인재채용</a></b><div class="sub"><a href="recruit.html">채용안내</a><a href="recruit.html#jobs">채용공고</a></div></div>
+  <div class="drawer__grp"><b><a href="news.html">홍보센터</a></b><div class="sub"><a href="news.html">게시판</a><a href="news.html#gallery">갤러리</a></div></div>
+  <div class="drawer__grp"><b><a href="contact.html">고객문의</a></b><div class="sub"><a href="contact.html#inquiry">문의하기</a><a href="contact.html#map">오시는 길</a></div></div>
+  <a class="btn btn--solid drawer__cta" href="contact.html"><span>고객문의</span>
+    <svg viewBox="0 0 40 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 6h37M32 1l6 5-6 5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div>
 
 <main id="top">
 
 <!-- ============ HERO ============ -->
-<section class="hero" id="hero">
-  <div class="hero__media"><img src="assets/hero.jpg" alt="석양의 해양 현장에서 작업 중인 대형 선박과 데크 크레인"></div>
+<section class="hero" id="hero" data-nav="dark">
+  <div class="hero__media"><img src="assets/hero.jpg" alt="석양의 해양 현장에서 작업 중인 대형 선박과 데크 크레인" fetchpriority="high"></div>
   <div class="hero__veil"></div>
-  <div class="wrap hero__in">
-    <div class="hero__l">
+  <div class="scrollcue">SCROLL</div>
+
+  <div class="hero__top">
+    <div class="wrap">
       <span class="hero__eyebrow">TOTAL SOLUTION · COMMISSIONING</span>
       <h1>
         <span class="mask"><span>프로젝트의 마지막 순간,</span></span>
-        <span class="mask"><span><em>K1</em>이 완성합니다</span></span>
+        <span class="mask"><span><i>K1</i>이 완성합니다</span></span>
       </h1>
-      <p class="hero__sub">해양플랜트 · 조선 · 에너지 산업의 시스템 완성과 성능 구현을 책임지는 통합 시운전 전문 기업, (주)케이원</p>
+      <p class="hero__sub">해양플랜트 · 조선 · 에너지 산업의 시스템 완성과 성능 구현을 책임지는 통합 시운전 전문 기업, (주)케이원.</p>
       <div class="hero__act">
-        <a class="btn btn--light" href="#business"><span>사업분야 보기</span>
+        <a class="btn btn--solid" href="business.html"><span>사업분야 보기</span>
           <svg viewBox="0 0 40 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 6h37M32 1l6 5-6 5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
-    <aside class="hero__r" aria-label="K1 전문 영역 구성">
-      <div class="dom">
-        <div class="dom__top">
-          <span class="dom__ey">ONE GROUP · TWO DOMAINS</span>
-          <p class="dom__cap">하나의 브랜드,<br>두 개의 전문 영역</p>
-        </div>
-        <div class="dom__rail">
-          <div class="dom__node" data-brand="ocean">
-            <div class="dom__head"><span class="dom__mk">K1 OCEAN</span><span class="dom__tag">Marine</span></div>
-            <ul class="dom__fields"><li>선박</li><li>선박 시운전</li></ul>
-          </div>
-          <div class="dom__node" data-brand="k1">
-            <div class="dom__head"><span class="dom__mk">K1</span><span class="dom__tag">Offshore · Plant</span></div>
-            <ul class="dom__fields"><li>해양</li><li>해양플랜트</li><li>FPSO</li><li>육상플랜트</li><li>전문 기술인력 지원</li></ul>
-          </div>
-        </div>
-      </div>
-    </aside>
   </div>
-  <div class="hero__foot"><div class="wrap">
-    <div class="hero__scroll">SCROLL<i></i></div>
-    <div class="hero__loc"><b>K1 OCEAN</b>Geoje · Yeongam · Ulsan, KOREA</div>
-  </div></div>
-</section>
 
-<!-- ============ FIGURES ============ -->
-<section class="sec sec--off" style="padding-block:clamp(60px,7vw,100px)">
-  <div class="wrap">
-    <div class="figs stagger reveal">
-      <div class="fig"><div class="fig__n" data-count="20">20<u>년</u></div><div class="fig__l">대표이사 시운전 업력</div></div>
-      <div class="fig"><div class="fig__n" data-count="9">9<u>년</u></div><div class="fig__l">창립 · Since 2017</div></div>
-      <div class="fig"><div class="fig__n" data-count="180">180<u>억</u></div><div class="fig__l">2025년 매출</div></div>
-      <div class="fig"><div class="fig__n" data-count="260">260<u>명</u></div><div class="fig__l">전문 인력</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ABOUT ============ -->
-<section class="sec" id="about">
-  <div class="wrap">
-    <div class="about">
-      <div class="about__t">
-        <span class="eyebrow reveal"><b>／ 01</b> About Us</span>
-        <h2 class="d2 reveal" style="margin-top:26px">신뢰로 증명하는<br><em>통합 시운전 파트너</em></h2>
-        <p class="lead reveal" style="margin-top:26px">케이원은 축적된 기술과 현장 경험을 바탕으로 설계와 시공의 결과를 안정적인 가동과 운영으로 연결합니다. 시작부터 마지막 순간까지, 그 모든 과정을 책임지는 것이 우리의 역할입니다.</p>
+  <!-- brand architecture: ONE COMPANY · TWO DOMAINS -->
+  <div class="dom">
+    <div class="dom__lab">One Company · Two Domains</div>
+    <div class="dom__in">
+      <div class="dom__b" data-k="ocean">
+        <div class="dom__mk"><i class="dot" aria-hidden="true"></i><b>K1 OCEAN</b><span>Marine</span></div>
+        <ul class="dom__f"><li>선박</li><li>선박 시운전</li></ul>
       </div>
-      <div class="about__ph ph reveal" data-d="1"><div class="ph__c"></div><span class="ph__tag">Image — 현장 / 설비 디테일</span></div>
-    </div>
-
-    <div class="values reveal">
-      <div class="val"><div class="val__n"><i class="ic i-trust" aria-hidden="true"></i>01</div><div><div class="val__k">분명한 기준<b>Trust · 신뢰</b></div><p>모든 업무를 명확한 원칙과 근거 위에서 판단합니다. 일관된 운영과 투명한 소통으로 신뢰의 기준을 세웁니다.</p></div></div>
-      <div class="val"><div class="val__n"><i class="ic i-collab" aria-hidden="true"></i>02</div><div><div class="val__k">유연한 협업<b>Collaboration · 협업</b></div><p>고객·파트너·구성원이 같은 방향으로 움직이도록 열린 태도로 협업하며 더 나은 결과를 함께 만듭니다.</p></div></div>
-      <div class="val"><div class="val__n"><i class="ic i-responsibility" aria-hidden="true"></i>03</div><div><div class="val__k">끝까지 책임<b>Responsibility · 책임</b></div><p>맡은 일은 시작보다 마무리가 중요합니다. 약속한 품질과 일정을 마지막 순간까지 책임 있게 완성합니다.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CAPABILITY ============ -->
-<section class="sec sec--navy" id="capability">
-  <div class="wrap">
-    <div class="cap">
-      <div class="cap__aside reveal">
-        <span class="eyebrow"><b>／ 02</b> K1 Capability</span>
-        <h2 class="d2" style="margin-top:26px">핵심 역량</h2>
-        <p class="lead" style="margin-top:22px">선박 전 영역을 이해하는<br>통합 시운전 실행 체계로<br>프로젝트의 마지막 순간을 책임집니다.</p>
-      </div>
-      <div class="cap__list reveal" data-d="1">
-        <div class="cap__row"><div class="cap__row__n">01</div><div><h3>Full-Ship Commissioning</h3><p>선박 전체 전력 및 제어 시스템 통합 시운전 수행 역량</p></div></div>
-        <div class="cap__row"><div class="cap__row__n">02</div><div><h3>High Voltage System</h3><p>Generator · Transformer · HV Switchgear 시험 및 계통 연계</p></div></div>
-        <div class="cap__row"><div class="cap__row__n">03</div><div><h3>Integrated E&amp;I</h3><p>전기 · 계장 시스템 인터페이스 및 시스템 검증</p></div></div>
-        <div class="cap__row"><div class="cap__row__n">04</div><div><h3>Commissioning Workforce</h3><p>HV 전문 엔지니어 및 현장 즉시 투입 인력 체계</p></div></div>
-        <div class="cap__row"><div class="cap__row__n">05</div><div><h3>Early-stage Risk Control</h3><p>공사 단계 참여로 Punch 감소 및 Rework 최소화</p></div></div>
-        <div class="cap__row"><div class="cap__row__n">06</div><div><h3>Equipment &amp; Standards</h3><p>전문 시험 장비 운용 및 PTW · JSA 기반 안전 관리</p></div></div>
+      <div class="dom__b" data-k="k1">
+        <div class="dom__mk"><i class="dot" aria-hidden="true"></i><b>K1</b><span>Offshore · Plant</span></div>
+        <ul class="dom__f"><li>해양</li><li>해양플랜트</li><li>FPSO</li><li>육상플랜트</li><li>전문 기술인력 지원</li></ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ BUSINESS ============ -->
-<section class="sec sec--off" id="business">
+<!-- ============ FIGURES (company scale) ============ -->
+<section class="figs" data-nav="dark">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><b>／ 03</b> Business Areas</span>
-      <h2 class="d2">시스템을 기동하는 기술,<br>K1이 수행합니다</h2>
-      <p class="lead">전기·기계·계장·공조·항해통신 전 영역에 대한 One-Stop Commissioning을 수행합니다.</p>
+    <div class="figs__in rv">
+      <div class="fig"><div class="fig__n"><span data-count="20">20</span><em>년</em></div><div class="fig__l">대표이사 시운전 업력</div></div>
+      <div class="fig"><div class="fig__n"><span data-count="9">9</span><em>년</em></div><div class="fig__l">창립 · Since 2017</div></div>
+      <div class="fig"><div class="fig__n"><span data-count="180">180</span><em>억</em></div><div class="fig__l">2025년 매출</div></div>
+      <div class="fig"><div class="fig__n"><span data-count="260">260</span><em>명</em></div><div class="fig__l">전문 인력</div></div>
     </div>
-    <div class="biz reveal" data-d="1">
-      <div class="biz__list" id="bizList">
-        <div class="biz__row active" data-i="0"><span class="n">01</span><span class="t">전기 시운전</span><span class="en">Electrical</span></div>
-        <div class="biz__row" data-i="1"><span class="n">02</span><span class="t">기계 시운전</span><span class="en">Mechanical</span></div>
-        <div class="biz__row" data-i="2"><span class="n">03</span><span class="t">계장 시운전</span><span class="en">Instrumentation</span></div>
-        <div class="biz__row" data-i="3"><span class="n">04</span><span class="t">선장 시운전</span><span class="en">Hull Outfitting Commissioning</span></div>
-        <div class="biz__row" data-i="4"><span class="n">05</span><span class="t">항해통신 시운전</span><span class="en">Navigation &amp; Telecom</span></div>
-        <div class="biz__row" data-i="5"><span class="n">06</span><span class="t">기술지원 · 친환경</span><span class="en">FGSS / ALS</span></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT (image-first) ============ -->
+<section class="sec sec--paper about" id="about" data-nav="light">
+  <div class="wrap">
+    <div class="about__grid">
+      <div class="about__img viz rv" style="--gx:70%;--gy:30%">
+        <svg class="viz__art" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+          <path d="M0 430 H800" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M120 430 L150 250 L470 250 L500 430 Z" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M150 250 L150 180 M470 250 L470 180" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M150 180 H470" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M560 430 L560 150 M560 150 L680 200 M560 210 L660 250" class="sig" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="560" cy="150" r="6" class="sig" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M0 470 Q200 450 400 470 T800 470" stroke="currentColor" stroke-width="1" opacity=".6"/>
+          <path d="M0 500 Q200 482 400 500 T800 500" stroke="currentColor" stroke-width="1" opacity=".4"/>
+        </svg>
+        <span class="viz__tag">Image — 시운전 엔지니어 현장</span>
       </div>
-      <div class="biz__panel">
-        <div class="biz__stage" id="bizStage">
-          <div class="biz__slide active"><div class="ph"><div class="ph__c"></div><span class="ph__tag">Image — 전기 시운전 설비</span></div></div>
-          <div class="biz__slide"><div class="ph"><div class="ph__c"></div><span class="ph__tag">Image — 기계 시운전 설비</span></div></div>
-          <div class="biz__slide"><div class="ph"><div class="ph__c"></div><span class="ph__tag">Image — 계장 시운전 설비</span></div></div>
-          <div class="biz__slide"><div class="ph"><div class="ph__c"></div><span class="ph__tag">Image — 선장 시운전 설비</span></div></div>
-          <div class="biz__slide"><div class="ph"><div class="ph__c"></div><span class="ph__tag">Image — 항해통신 설비</span></div></div>
-          <div class="biz__slide"><div class="ph"><div class="ph__c"></div><span class="ph__tag">Image — 친환경 추진 시스템</span></div></div>
-        </div>
-        <div class="biz__caps" id="bizCaps">
-          <div class="biz__cap active"><div class="biz__cap__t">전기 시운전</div><ul class="biz__cap__l"><li>고전압 및 전력 시스템 통합 시운전</li><li>Synchronizing / Load Test / PMS 검증</li><li>DP &amp; FMEA Commissioning 수행</li></ul></div>
-          <div class="biz__cap"><div class="biz__cap__t">기계 시운전</div><ul class="biz__cap__l"><li>펌프·컴프레서·밸브 등 회전/비회전 장비 시험</li><li>장비 기능 및 운전 상태 검증</li><li>시스템 운전 안정성 및 성능 확인</li></ul></div>
-          <div class="biz__cap"><div class="biz__cap__t">계장 시운전</div><ul class="biz__cap__l"><li>Calibration &amp; Loop Check 수행</li><li>제어밸브·트랜스미터·계측 시스템 검증</li><li>C&amp;E Test 기반 제어 로직 확인</li></ul></div>
-          <div class="biz__cap"><div class="biz__cap__t">선장 시운전</div><ul class="biz__cap__l"><li>화물유 · 밸러스트 시스템 시운전</li><li>갑판기기 · 소화장치 · 구명설비 기능 확인</li><li>선장 시스템 및 배관 세정 상태 확인</li></ul></div>
-          <div class="biz__cap"><div class="biz__cap__t">항해통신 시운전</div><ul class="biz__cap__l"><li>항해·통신 시스템 인터페이스 시험</li><li>GPS · Radar · GMDSS 장비 기능 검증</li><li>통합 인터페이스 확인</li></ul></div>
-          <div class="biz__cap"><div class="biz__cap__t">기술지원 · 친환경</div><ul class="biz__cap__l"><li>LNG · Dual Fuel</li><li>FGSS</li><li>ALS · BOG · BWTS · SCRUBBER 등 친환경 추진 시스템 기술 지원·검증</li></ul></div>
-        </div>
+      <div class="about__txt">
+        <span class="eyebrow rv">／ 01 &nbsp;About Us</span>
+        <h2 class="d2 rv">신뢰로 증명하는<br><em>통합 시운전 파트너</em></h2>
+        <p class="lead rv">케이원은 축적된 기술과 현장 경험을 바탕으로 설계와 시공의 결과를 안정적인 가동과 운영으로 연결합니다. 시작부터 마지막 순간까지, 그 모든 과정을 책임지는 것이 우리의 역할입니다.</p>
+      </div>
+    </div>
+    <div class="vals stg rv">
+      <div class="val"><i class="ic i-trust" aria-hidden="true"></i><h3>분명한 기준<b>Trust · 신뢰</b></h3><p>모든 업무를 명확한 원칙과 근거 위에서 판단합니다. 일관된 운영과 투명한 소통으로 신뢰의 기준을 세웁니다.</p></div>
+      <div class="val"><i class="ic i-collab" aria-hidden="true"></i><h3>유연한 협업<b>Collaboration · 협업</b></h3><p>고객·파트너·구성원이 같은 방향으로 움직이도록 열린 태도로 협업하며 더 나은 결과를 함께 만듭니다.</p></div>
+      <div class="val"><i class="ic i-responsibility" aria-hidden="true"></i><h3>끝까지 책임<b>Responsibility · 책임</b></h3><p>맡은 일은 시작보다 마무리가 중요합니다. 약속한 품질과 일정을 마지막 순간까지 책임 있게 완성합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAPABILITY (system diagram) ============ -->
+<section class="sec cap" id="capability" data-nav="dark">
+  <div class="wrap">
+    <div class="cap__grid">
+      <div class="cap__aside">
+        <span class="eyebrow rv">／ 02 &nbsp;K1 Capability</span>
+        <h2 class="d2 rv">핵심 역량,<br>하나의 시스템</h2>
+        <p class="lead rv">개별 기술이 아니라, 선박 전 영역을 이해하는 <em>통합 시운전 실행 체계</em>로 연결되어 프로젝트의 마지막 순간을 책임집니다.</p>
+        <span class="cap__badge rv"><i aria-hidden="true"></i>Integrated Commissioning System</span>
+      </div>
+      <div class="cap__sys rv">
+        <div class="cap__node" tabindex="0"><div class="no">01</div><h3>Full-Ship Commissioning</h3><p>선박 전체 전력 및 제어 시스템을 통합 시운전하는 실행 역량.</p></div>
+        <div class="cap__node" tabindex="0"><div class="no">02</div><h3>High Voltage System</h3><p>Generator · Transformer · HV Switchgear 시험 및 계통 연계.</p></div>
+        <div class="cap__node" tabindex="0"><div class="no">03</div><h3>Integrated E&amp;I</h3><p>전기 · 계장 시스템 인터페이스 및 시스템 검증.</p></div>
+        <div class="cap__node" tabindex="0"><div class="no">04</div><h3>Commissioning Workforce</h3><p>HV 전문 엔지니어 및 현장 즉시 투입 인력 체계.</p></div>
+        <div class="cap__node" tabindex="0"><div class="no">05</div><h3>Early-stage Risk Control</h3><p>공사 단계 참여로 Punch 감소 및 Rework 최소화.</p></div>
+        <div class="cap__node" tabindex="0"><div class="no">06</div><h3>Equipment &amp; Standards</h3><p>전문 시험 장비 운용 및 PTW · JSA 기반 안전 관리.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ EXECUTION (KES) ============ -->
-<section class="sec exec" id="execution">
-  <div class="wrap">
-    <div class="sec-head reveal" style="max-width:860px">
-      <span class="eyebrow"><b>／ 04</b> K1 Execution System</span>
-      <h2 class="d2" style="color:#fff">사후 대응이 아닌,<br>사전 통제</h2>
-      <p class="lead">KES는 공사 단계부터 조기 투입하여 프로젝트를 선제적으로 제어하고 최적의 결과를 이끌어냅니다. (동일 선종 기준 성과 비교)</p>
+<!-- ============ BUSINESS (full-bleed showcase panels) ============ -->
+<section class="biz" id="business" data-nav="dark">
+  <div class="wrap biz__intro">
+    <span class="eyebrow rv">／ 03 &nbsp;Business Areas</span>
+    <h2 class="d2 rv">시스템을 기동하는 기술,<br>K1이 수행합니다</h2>
+    <p class="lead rv">전기 · 기계 · 계장 · 공조 · 항해통신 전 영역에 대한 One-Stop Commissioning을 수행합니다.</p>
+  </div>
+
+  <!-- 01 Electrical -->
+  <article class="bizp rv" data-nav="dark">
+    <div class="bizp__viz viz" style="--gx:80%;--gy:32%">
+      <svg class="viz__art" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+        <path d="M0 320 H210 L250 220 L320 420 L390 260 L440 320 H800" class="sig" stroke="currentColor" stroke-width="2"/>
+        <circle cx="210" cy="320" r="5" stroke="currentColor" stroke-width="1.5"/><circle cx="440" cy="320" r="5" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M600 140 V460 M660 140 V460 M720 140 V460" stroke="currentColor" stroke-width="1" opacity=".5"/>
+        <path d="M600 200 H720 M600 300 H720 M600 400 H720" stroke="currentColor" stroke-width="1" opacity=".5"/>
+      </svg>
+      <span class="viz__tag">Image — 전기 시운전 설비</span>
     </div>
-    <div class="kes reveal" data-d="1">
-      <div class="kes__c"><div class="kes__n" data-count="12">12<em>%</em></div><div class="kes__t">투입 시수 절감</div></div>
-      <div class="kes__c"><div class="kes__n" data-count="15">15<em>%</em></div><div class="kes__t">작업 생산성 향상</div></div>
-      <div class="kes__c"><div class="kes__n">3–5<em>%</em></div><div class="kes__t">재작업률</div></div>
-      <div class="kes__c"><div class="kes__n" data-count="30">30<em>%</em></div><div class="kes__t">공정지연 감소</div></div>
-      <div class="kes__c"><div class="kes__n" data-count="98">98<em>%+</em></div><div class="kes__t">품질 합격률</div></div>
-      <div class="kes__c"><div class="kes__n">0–0.2<em>건</em></div><div class="kes__t">안전사고</div></div>
+    <div class="bizp__scrim"></div>
+    <div class="bizp__body"><div class="bizp__c">
+      <span class="bizp__no">01</span><span class="bizp__en">Electrical</span>
+      <h3>전기 시운전</h3>
+      <ul><li>고전압 및 전력 시스템 통합 시운전</li><li>Synchronizing / Load Test / PMS 검증</li><li>DP &amp; FMEA Commissioning 수행</li></ul>
+    </div></div>
+  </article>
+
+  <!-- 02 Mechanical -->
+  <article class="bizp rv" data-nav="dark">
+    <div class="bizp__viz viz" style="--gx:22%;--gy:34%">
+      <svg class="viz__art" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+        <circle cx="250" cy="300" r="150" stroke="currentColor" stroke-width="1.5"/><circle cx="250" cy="300" r="96" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="250" cy="300" r="30" class="sig" stroke="currentColor" stroke-width="2"/>
+        <g stroke="currentColor" stroke-width="1.5">
+          <path d="M250 150 V120 M250 450 V480 M100 300 H70 M400 300 H430"/>
+          <path d="M356 194 L378 172 M144 406 L122 428 M356 406 L378 428 M144 194 L122 172"/>
+        </g>
+        <circle cx="620" cy="300" r="70" stroke="currentColor" stroke-width="1" opacity=".5"/>
+      </svg>
+      <span class="viz__tag">Image — 기계 시운전 설비</span>
+    </div>
+    <div class="bizp__scrim"></div>
+    <div class="bizp__body"><div class="bizp__c">
+      <span class="bizp__no">02</span><span class="bizp__en">Mechanical</span>
+      <h3>기계 시운전</h3>
+      <ul><li>펌프 · 컴프레서 · 밸브 등 회전/비회전 장비 시험</li><li>장비 기능 및 운전 상태 검증</li><li>시스템 운전 안정성 및 성능 확인</li></ul>
+    </div></div>
+  </article>
+
+  <!-- 03 Instrumentation -->
+  <article class="bizp rv" data-nav="dark">
+    <div class="bizp__viz viz" style="--gx:82%;--gy:30%">
+      <svg class="viz__art" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+        <path d="M120 400 A180 180 0 0 1 480 400" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M300 400 L410 250" class="sig" stroke="currentColor" stroke-width="2"/>
+        <circle cx="300" cy="400" r="8" class="sig" stroke="currentColor" stroke-width="2"/>
+        <g stroke="currentColor" stroke-width="1.4">
+          <path d="M150 360 l-24 -14 M300 232 v-28 M450 360 l24 -14"/>
+        </g>
+        <path d="M560 300 h120 M620 260 v80 M560 300 a30 30 0 0 1 30 -30 M650 300 a30 30 0 0 1 30 30" stroke="currentColor" stroke-width="1" opacity=".5"/>
+      </svg>
+      <span class="viz__tag">Image — 계장 시운전 설비</span>
+    </div>
+    <div class="bizp__scrim"></div>
+    <div class="bizp__body"><div class="bizp__c">
+      <span class="bizp__no">03</span><span class="bizp__en">Instrumentation</span>
+      <h3>계장 시운전</h3>
+      <ul><li>Calibration &amp; Loop Check 수행</li><li>제어밸브 · 트랜스미터 · 계측 시스템 검증</li><li>C&amp;E Test 기반 제어 로직 확인</li></ul>
+    </div></div>
+  </article>
+
+  <!-- 04 Hull Outfitting -->
+  <article class="bizp rv" data-nav="dark">
+    <div class="bizp__viz viz" style="--gx:20%;--gy:36%">
+      <svg class="viz__art" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+        <path d="M120 200 H520 L470 420 Q300 470 130 420 Z" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M170 200 V420 M230 200 V430 M300 200 V440 M370 200 V435 M440 200 V425" stroke="currentColor" stroke-width="1" opacity=".55"/>
+        <path d="M120 200 H520" class="sig" stroke="currentColor" stroke-width="2"/>
+        <path d="M560 470 Q640 452 720 470" stroke="currentColor" stroke-width="1" opacity=".5"/>
+      </svg>
+      <span class="viz__tag">Image — 선장 시운전 설비</span>
+    </div>
+    <div class="bizp__scrim"></div>
+    <div class="bizp__body"><div class="bizp__c">
+      <span class="bizp__no">04</span><span class="bizp__en">Hull Outfitting Commissioning</span>
+      <h3>선장 시운전</h3>
+      <ul><li>화물유 · 밸러스트 시스템 시운전</li><li>갑판기기 · 소화장치 · 구명설비 기능 확인</li><li>선장 시스템 및 배관 세정 상태 확인</li></ul>
+    </div></div>
+  </article>
+
+  <!-- 05 Navigation & Telecom -->
+  <article class="bizp rv" data-nav="dark">
+    <div class="bizp__viz viz" style="--gx:80%;--gy:30%">
+      <svg class="viz__art" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+        <circle cx="290" cy="300" r="60" stroke="currentColor" stroke-width="1.3" opacity=".6"/>
+        <circle cx="290" cy="300" r="120" stroke="currentColor" stroke-width="1.3" opacity=".45"/>
+        <circle cx="290" cy="300" r="180" stroke="currentColor" stroke-width="1.3" opacity=".3"/>
+        <path d="M290 300 L290 120 M290 300 L448 210" class="sig" stroke="currentColor" stroke-width="2"/>
+        <path d="M110 300 H470 M290 120 V480" stroke="currentColor" stroke-width="1" opacity=".4"/>
+        <circle cx="448" cy="210" r="6" class="sig" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      <span class="viz__tag">Image — 항해통신 설비</span>
+    </div>
+    <div class="bizp__scrim"></div>
+    <div class="bizp__body"><div class="bizp__c">
+      <span class="bizp__no">05</span><span class="bizp__en">Navigation &amp; Telecom</span>
+      <h3>항해통신 시운전</h3>
+      <ul><li>항해 · 통신 시스템 인터페이스 시험</li><li>GPS · Radar · GMDSS 장비 기능 검증</li><li>통합 인터페이스 확인</li></ul>
+    </div></div>
+  </article>
+
+  <!-- 06 FGSS / ALS -->
+  <article class="bizp rv" data-nav="dark">
+    <div class="bizp__viz viz" style="--gx:22%;--gy:32%">
+      <svg class="viz__art" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+        <path d="M250 190 l70 40 v90 l-70 40 l-70 -40 v-90 Z" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M250 120 v70 M180 240 l-58 -34 M320 240 l58 -34 M250 360 v70 M180 320 l-58 34 M320 320 l58 34" stroke="currentColor" stroke-width="1" opacity=".5"/>
+        <circle cx="250" cy="120" r="6" stroke="currentColor" stroke-width="1.4"/><circle cx="250" cy="430" r="6" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M600 400 q-40 -60 0 -110 q40 50 0 110 Z" class="sig" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      <span class="viz__tag">Image — 친환경 추진 시스템</span>
+    </div>
+    <div class="bizp__scrim"></div>
+    <div class="bizp__body"><div class="bizp__c">
+      <span class="bizp__no">06</span><span class="bizp__en">FGSS / ALS</span>
+      <h3>기술지원 · 친환경</h3>
+      <ul><li>LNG · Dual Fuel</li><li>FGSS</li><li>ALS · BOG · BWTS · SCRUBBER 등 친환경 추진 시스템 기술 지원·검증</li></ul>
+    </div></div>
+  </article>
+</section>
+
+<!-- ============ EXECUTION (KES — data-centric) ============ -->
+<section class="sec exe" id="execution" data-nav="dark">
+  <div class="wrap">
+    <div class="exe__head">
+      <span class="eyebrow rv">／ 04 &nbsp;K1 Execution System</span>
+      <h2 class="d2 rv">사후 대응이 아닌,<br><em>사전 통제</em></h2>
+      <p class="lead rv">KES는 공사 단계부터 조기 투입하여 프로젝트를 선제적으로 제어하고 최적의 결과를 이끌어냅니다. (동일 선종 기준 성과 비교)</p>
+    </div>
+    <div class="kes rv">
+      <div class="kes__c" style="--bar:48%"><div class="kes__n"><span data-count="12">12</span><em>%</em></div><div class="kes__t">투입 시수 절감</div><p class="kes__w">설계·시공 단계 조기 참여로 불필요 공수 제거</p></div>
+      <div class="kes__c" style="--bar:60%"><div class="kes__n"><span data-count="15">15</span><em>%</em></div><div class="kes__t">작업 생산성 향상</div><p class="kes__w">표준 절차와 전문 인력으로 현장 효율 상승</p></div>
+      <div class="kes__c" style="--bar:24%"><div class="kes__n">3 – 5<em>%</em></div><div class="kes__t">재작업률</div><p class="kes__w">사전 통제로 Punch · Rework 최소화</p></div>
+      <div class="kes__c" style="--bar:88%"><div class="kes__n"><span data-count="30">30</span><em>%</em></div><div class="kes__t">공정지연 감소</div><p class="kes__w">선제적 리스크 관리로 일정 준수</p></div>
+      <div class="kes__c" style="--bar:96%"><div class="kes__n"><span data-count="98">98</span><em>%+</em></div><div class="kes__t">품질 합격률</div><p class="kes__w">검증 기반 시운전으로 완성도 확보</p></div>
+      <div class="kes__c" style="--bar:14%"><div class="kes__n">0 – 0.2<em>건</em></div><div class="kes__t">안전사고</div><p class="kes__w">PTW · JSA 기반 안전 관리 체계</p></div>
     </div>
   </div>
 </section>
 
 <!-- ============ PROJECTS ============ -->
-<section class="sec" id="projects">
+<section class="sec sec--paper" id="projects" data-nav="light">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><b>／ 05</b> Project Track Record</span>
-      <h2 class="d2">국내외 주요<br>프로젝트 실적</h2>
-      <p class="lead">국내 주요 조선소 시운전 프로젝트의 75%를 수행하며, 2007년부터 글로벌 EPC 프로젝트에서 기술력을 증명해 왔습니다.</p>
+    <div class="pj__intro">
+      <span class="eyebrow rv">／ 05 &nbsp;Project Track Record</span>
+      <h2 class="d2 rv">국내외 주요<br>프로젝트 실적</h2>
+      <p class="lead rv">국내 주요 조선소 시운전 프로젝트의 75%를 수행하며, 글로벌 EPC 프로젝트에서 기술력을 증명해 왔습니다.</p>
     </div>
-
-    <div class="pj-feat stagger reveal">
-      <article class="pj-card"><div class="ph"><div class="ph__c"></div><span class="ph__tag">Project — P79 FPSO</span></div>
-        <div class="yr">2024</div><h3>PETROBRAS P79 FPSO</h3><p>신조 FPSO Hull &amp; Topside (EPC) 통합 시운전</p>
-        <div class="meta"><span>한화오션</span><span>EPC · INTEGRATED</span></div></article>
-      <article class="pj-card"><div class="ph"><div class="ph__c"></div><span class="ph__tag">Project — WTIV CADELER</span></div>
-        <div class="yr">2024</div><h3>WTIV CADELER</h3><p>풍력 설치선(Wind Turbine Installation Vessel) 시운전</p>
-        <div class="meta"><span>한화오션</span><span>COMMISSIONING</span></div></article>
-      <article class="pj-card"><div class="ph"><div class="ph__c"></div><span class="ph__tag">Project — SHELL PRELUDE FLNG</span></div>
-        <div class="yr">2017</div><h3>SHELL PRELUDE FLNG</h3><p>대형 해양플랜트 전기·계장 통합 시운전</p>
-        <div class="meta"><span>삼성중공업</span><span>E&amp;I</span></div></article>
+    <div class="pj-feat stg rv">
+      <article class="pj-card"><div class="viz"><span class="viz__tag">Project Photo · 실사진</span></div>
+        <div class="yr">한화오션 · 2024</div><h3>PETROBRAS P79 FPSO</h3><p>신조 FPSO Hull &amp; Topside (EPC) 통합 시운전</p></article>
+      <article class="pj-card"><div class="viz"><span class="viz__tag">Project Photo · 실사진</span></div>
+        <div class="yr">대우조선해양 · 2017</div><h3>CHEVRON TCO FGP</h3><p>고압 전력 시스템 및 통합 시운전 수행</p></article>
+      <article class="pj-card"><div class="viz"><span class="viz__tag">Project Photo · 실사진</span></div>
+        <div class="yr">한화오션 · 2024</div><h3>WTIV CADELER</h3><p>풍력 설치선(Wind Turbine Installation Vessel) 시운전</p></article>
+      <article class="pj-card"><div class="viz"><span class="viz__tag">Project Photo · 실사진</span></div>
+        <div class="yr">삼성중공업</div><h3>SHELL PRELUDE FLNG</h3><p>대형 해양플랜트 전기·계장 통합 시운전</p></article>
+      <article class="pj-card"><div class="viz"><span class="viz__tag">Project Photo · 실사진</span></div>
+        <div class="yr">삼성중공업 · 2007</div><h3>EXXONMOBIL BARZAN</h3><p>초기 대표 프로젝트, Drillship 시운전</p></article>
+      <article class="pj-card"><div class="viz"><span class="viz__tag">Project Photo · 실사진</span></div>
+        <div class="yr">SAIPEM (offshore)</div><h3>Woodside TRION</h3><p>해외 Offshore EPC 통합 시운전 수행</p></article>
     </div>
-
-    <div class="rec reveal">
-      <div class="rec__row"><div class="yr">2024</div><div class="nm">NOC GALLAF Project<small>Jansz IO Compression Control Station</small></div><div class="cl">한화오션</div><div class="role">Control Station</div></div>
-      <div class="rec__row"><div class="yr">2020</div><div class="nm">PETROBRAS P78 FPSO<small>신조 FPSO Hull (EPC) 시운전</small></div><div class="cl">현대중공업</div><div class="role">Hull</div></div>
-      <div class="rec__row"><div class="yr">2017</div><div class="nm">CHEVRON TCO FGP<small>고압 전력 시스템 및 통합 시운전 수행</small></div><div class="cl">대우조선해양 · 신한</div><div class="role">HV · Integrated</div></div>
-      <div class="rec__row"><div class="yr">2017</div><div class="nm">TECHNIP OOG · TRANSOCEAN #1~5<small>Drillship 통합 시운전</small></div><div class="cl">대우조선해양</div><div class="role">Drillship</div></div>
-      <div class="rec__row"><div class="yr">2007</div><div class="nm">EXXONMOBIL BARZAN<small>초기 대표 프로젝트, 해양플랜트 전기·계장 시운전</small></div><div class="cl">삼성중공업 · 현대중공업</div><div class="role">E&amp;I</div></div>
-      <div class="rec__row"><div class="yr">Global</div><div class="nm">Woodside TRION<small>해외 Offshore EPC 통합 시운전 수행</small></div><div class="cl">SAIPEM (offshore)</div><div class="role">Offshore EPC</div></div>
-      <div class="rec__row"><div class="yr">Global</div><div class="nm">FGSS Full 시운전<small>FGSS 전체 시운전 수행 · Shenzhen / Hanoi</small></div><div class="cl">SB선보 · GSI조선</div><div class="role">FGSS</div></div>
+    <div class="rv">
+      <a class="btn" href="projects.html" style="color:var(--ink)"><span>전체 실적 보기</span>
+        <svg viewBox="0 0 40 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 6h37M32 1l6 5-6 5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
 </section>
 
 <!-- ============ CLIENTS ============ -->
-<section class="sec sec--off" id="clients">
+<section class="sec sec--paper2" id="clients" data-nav="light">
   <div class="wrap">
-    <div class="sec-head reveal" style="text-align:center;max-width:720px;margin-inline:auto">
-      <span class="eyebrow" style="justify-content:center"><b>／ 06</b> Our Clients</span>
+    <div class="cli__intro rv">
+      <span class="eyebrow">／ 06 &nbsp;Our Clients</span>
       <h2 class="d2">주요 고객사</h2>
-      <p class="lead" style="margin-inline:auto">국내 대형 조선소와 글로벌 EPC · 오일메이저와 함께 프로젝트를 수행해 왔습니다.</p>
+      <p class="lead">국내 대형 조선소와 글로벌 EPC · 오일메이저와 함께 프로젝트를 수행해 왔습니다.</p>
     </div>
-    <div class="wall reveal">
+    <div class="wall rv">
       <i><img src="assets/logos/samsung-hi.png" alt="삼성중공업" loading="lazy"></i>
       <i><img src="assets/logos/hyundai-hi.png" alt="현대중공업" loading="lazy"></i>
       <i><img src="assets/logos/hanwha-ocean.png" alt="한화오션" loading="lazy"></i>
@@ -278,31 +373,31 @@
   </div>
 </section>
 
-<!-- ============ CERTIFICATIONS ============ -->
-<section class="sec sec--off2" id="certifications">
+<!-- ============ CERTIFICATIONS (trust band) ============ -->
+<section class="sec cap" id="certifications" data-nav="dark">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><b>／ 07</b> Certifications</span>
-      <h2 class="d2">국제 인증 및 면허</h2>
-      <p class="lead">국제 기준에 따라 검증된 품질·환경·안전 경영 시스템을 기반으로 운영합니다.</p>
+    <div class="cert__lead">
+      <span class="eyebrow rv">／ 07 &nbsp;Certifications</span>
+      <h2 class="d2 rv">국제 기준으로<br><em>검증된 신뢰</em></h2>
+      <p class="lead rv">국제 기준에 따라 검증된 품질 · 환경 · 안전 경영 시스템을 기반으로 운영합니다.</p>
     </div>
-    <div class="certs reveal">
-      <div class="cert"><div class="cert__n"><i class="ic i-quality" aria-hidden="true"></i>01</div><div class="cert__name">ISO 9001</div><div class="cert__cat">품질경영시스템</div><div class="cert__org">Quality Management</div></div>
-      <div class="cert"><div class="cert__n"><i class="ic i-eco" aria-hidden="true"></i>02</div><div class="cert__name">ISO 14001</div><div class="cert__cat">환경경영시스템</div><div class="cert__org">Environmental Management</div></div>
-      <div class="cert"><div class="cert__n"><i class="ic i-safety" aria-hidden="true"></i>03</div><div class="cert__name">ISO 45001</div><div class="cert__cat">안전보건경영시스템</div><div class="cert__org">Occupational Health &amp; Safety</div></div>
-      <div class="cert"><div class="cert__n"><i class="ic i-license" aria-hidden="true"></i>04</div><div class="cert__name">전기공사업 면허</div><div class="cert__cat">전기공사 면허</div><div class="cert__org">Licensed Electrical Contractor</div></div>
+    <div class="certrow rv">
+      <div class="certc"><i class="ic i-quality" aria-hidden="true"></i><h3>ISO 9001</h3><div class="k">품질경영시스템</div><div class="en">Quality Management</div></div>
+      <div class="certc"><i class="ic i-eco" aria-hidden="true"></i><h3>ISO 14001</h3><div class="k">환경경영시스템</div><div class="en">Environmental Management</div></div>
+      <div class="certc"><i class="ic i-safety" aria-hidden="true"></i><h3>ISO 45001</h3><div class="k">안전보건경영시스템</div><div class="en">Occupational Health &amp; Safety</div></div>
+      <div class="certc"><i class="ic i-license" aria-hidden="true"></i><h3>전기공사업 면허</h3><div class="k">전기공사 면허</div><div class="en">Licensed Electrical Contractor</div></div>
     </div>
   </div>
 </section>
 
 </main>
 
-<!-- ============ CTA + FOOTER ============ -->
-<footer class="foot" id="contact">
+<!-- ============ FOOTER ============ -->
+<footer class="foot" id="contact" data-nav="dark">
   <div class="foot__cta">
     <div class="wrap">
       <h2>프로젝트의 마지막 순간,<br><em>케이원이 함께하겠습니다</em></h2>
-      <a class="btn btn--orange reveal" href="mailto:k1ocean@k1tnc.co.kr"><span>문의하기</span>
+      <a class="btn btn--solid" href="contact.html"><span>고객문의</span>
         <svg viewBox="0 0 40 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 6h37M32 1l6 5-6 5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
@@ -317,7 +412,7 @@
       <div class="foot__col"><h4>프로젝트 실적</h4><a href="projects.html#domestic">국내 프로젝트</a><a href="projects.html#overseas">해외 프로젝트</a><a href="projects.html#clients">주요 고객사</a></div>
       <div class="foot__col"><h4>인재채용</h4><a href="recruit.html">채용안내</a><a href="recruit.html#jobs">채용공고</a></div>
       <div class="foot__col"><h4>홍보센터</h4><a href="news.html">게시판</a><a href="news.html#gallery">갤러리</a></div>
-      <div class="foot__col"><h4>고객문의</h4><a href="contact.html">문의하기</a><a href="contact.html#map">오시는 길</a></div>
+      <div class="foot__col"><h4>고객문의</h4><a href="contact.html#inquiry">문의하기</a><a href="contact.html#map">오시는 길</a></div>
     </div>
   </div>
   <div class="wrap foot__info">
@@ -329,6 +424,6 @@
   <div class="wrap foot__bot">© 2026 (주)케이원 (K1 Co., Ltd.) · K1 OCEAN — All rights reserved.</div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/v2.js"></script>
 </body>
 </html>

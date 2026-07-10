@@ -8,19 +8,20 @@
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/v2.css">
 </head>
 <body class="sub">
+<a class="skip" href="#main">본문 바로가기</a>
 
 <!-- HEADER -->
-<header class="head stuck" id="head">
+<header class="head" id="head">
   <div class="head__in">
     <a class="brand" href="index.html" aria-label="(주)케이원 · K1 OCEAN">
-      <img class="l-dark" src="assets/logo-k1ocean-dark.png" alt="K1 OCEAN">
-      <img class="l-light" src="assets/logo-k1ocean.png" alt="K1 OCEAN">
-      <span class="brand__name">(주)케이원</span>
+      <img class="brand--dark" src="assets/logo-k1ocean-dark.png" alt="K1 OCEAN">
+      <img class="brand--light" src="assets/logo-k1ocean.png" alt="K1 OCEAN">
+      <b>(주)케이원</b>
     </a>
-    <div class="navwrap">
+    <div class="gnbwrap">
       <nav aria-label="주 메뉴"><ul class="gnb">
         <li><a href="about.html">회사소개</a></li>
         <li><a href="business.html">사업분야</a></li>
@@ -35,31 +36,30 @@
         <div class="mega__col"><h5>프로젝트 실적</h5><a href="projects.html#domestic">국내 프로젝트</a><a href="projects.html#overseas">해외 프로젝트</a><a href="projects.html#clients">주요 고객사</a></div>
         <div class="mega__col"><h5>인재채용</h5><a href="recruit.html">채용안내</a><a href="recruit.html#jobs">채용공고</a></div>
         <div class="mega__col"><h5>홍보센터</h5><a href="news.html">게시판</a><a href="news.html#gallery">갤러리</a></div>
-        <div class="mega__col"><h5>고객문의</h5><a href="contact.html">문의하기</a><a href="contact.html#map">오시는 길</a></div>
+        <div class="mega__col"><h5>고객문의</h5><a href="contact.html#inquiry">문의하기</a><a href="contact.html#map">오시는 길</a></div>
       </div></div>
     </div>
     <div class="head__r">
-      <span class="lang"><b>KR</b> · EN</span>
+      <span class="head__lang"><b>KR</b> · EN</span>
       <a class="head__cta" href="contact.html">고객문의</a>
-      <button class="burger" id="burger" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+      <button class="burger" id="burger" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <div class="drawer" id="drawer" aria-hidden="true">
-  <button class="drawer__x" id="drawerX" aria-label="닫기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round"/></svg></button>
-  <ul>
-    <li><a href="about.html">회사소개</a><div class="drawer__sub"><a href="about.html#ceo">CEO 인사말</a><a href="about.html#overview">회사개요</a><a href="about.html#org">조직도</a></div></li>
-    <li><a href="business.html">사업분야</a><div class="drawer__sub"><a href="business.html#commissioning">시운전</a><a href="business.html#support">기술지원</a><a href="business.html#maintenance">유지보수</a></div></li>
-    <li><a href="projects.html">프로젝트 실적</a><div class="drawer__sub"><a href="projects.html#domestic">국내</a><a href="projects.html#overseas">해외</a><a href="projects.html#clients">주요 고객사</a></div></li>
-    <li><a href="recruit.html">인재채용</a></li>
-    <li><a href="news.html">홍보센터</a></li>
-    <li><a href="contact.html">고객문의</a></li>
-  </ul>
+  <div class="drawer__grp"><b><a href="about.html">회사소개</a></b><div class="sub"><a href="about.html#ceo">CEO 인사말</a><a href="about.html#overview">회사개요</a><a href="about.html#org">조직도</a></div></div>
+  <div class="drawer__grp"><b><a href="business.html">사업분야</a></b><div class="sub"><a href="business.html#commissioning">시운전</a><a href="business.html#support">기술지원</a><a href="business.html#maintenance">유지보수</a></div></div>
+  <div class="drawer__grp"><b><a href="projects.html">프로젝트 실적</a></b><div class="sub"><a href="projects.html#domestic">국내</a><a href="projects.html#overseas">해외</a><a href="projects.html#clients">주요 고객사</a></div></div>
+  <div class="drawer__grp"><b><a href="recruit.html">인재채용</a></b><div class="sub"><a href="recruit.html">채용안내</a><a href="recruit.html#jobs">채용공고</a></div></div>
+  <div class="drawer__grp"><b><a href="news.html">홍보센터</a></b><div class="sub"><a href="news.html">게시판</a><a href="news.html#gallery">갤러리</a></div></div>
+  <div class="drawer__grp"><b><a href="contact.html">고객문의</a></b><div class="sub"><a href="contact.html#inquiry">문의하기</a><a href="contact.html#map">오시는 길</a></div></div>
+  <a class="btn btn--solid drawer__cta" href="contact.html"><span>고객문의</span>
+    <svg viewBox="0 0 40 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 6h37M32 1l6 5-6 5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div>
 
 <!-- SUB HERO -->
-<section class="subhero">
+<section class="subhero" data-nav="dark">
   <div class="wrap">
     <div class="bc"><a href="index.html">홈</a> <b>›</b> 프로젝트 실적</div>
     <h1>프로젝트 실적</h1>
@@ -75,30 +75,30 @@
   </div>
 </nav>
 
-<main>
+<main id="main">
 
 <!-- DOMESTIC -->
-<section class="sec" id="domestic">
+<section class="sec sec--paper" id="domestic" data-nav="light">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><b>／ 01</b> Domestic Projects</span>
+    <div class="sec-head rv">
+      <span class="eyebrow"><b>／ 01</b>&nbsp; Domestic Projects</span>
       <h2 class="d2">국내 조선소<br>시운전 프로젝트</h2>
       <p class="lead">국내 주요 조선소 시운전 프로젝트의 75%를 수행하며, 한화오션·현대중공업·삼성중공업·대우조선해양 등과 함께 대형 해양플랜트·특수선 프로젝트를 완성해 왔습니다.</p>
     </div>
 
-    <div class="pj-feat stagger reveal">
-      <article class="pj-card"><div class="ph"><div class="ph__c"></div><span class="ph__tag">Project — P79 FPSO</span></div>
+    <div class="pj-feat stg rv">
+      <article class="pj-card"><div class="viz"><span class="viz__tag">Project — P79 FPSO</span></div>
         <div class="yr">2024</div><h3>PETROBRAS P79 FPSO</h3><p>신조 FPSO Hull &amp; Topside (EPC) 통합 시운전</p>
         <div class="meta"><span>한화오션</span><span>EPC · INTEGRATED</span></div></article>
-      <article class="pj-card"><div class="ph"><div class="ph__c"></div><span class="ph__tag">Project — WTIV CADELER</span></div>
+      <article class="pj-card"><div class="viz"><span class="viz__tag">Project — WTIV CADELER</span></div>
         <div class="yr">2024</div><h3>WTIV CADELER</h3><p>풍력 설치선(Wind Turbine Installation Vessel) 시운전</p>
         <div class="meta"><span>한화오션</span><span>COMMISSIONING</span></div></article>
-      <article class="pj-card"><div class="ph"><div class="ph__c"></div><span class="ph__tag">Project — SHELL PRELUDE FLNG</span></div>
+      <article class="pj-card"><div class="viz"><span class="viz__tag">Project — SHELL PRELUDE FLNG</span></div>
         <div class="yr">2017</div><h3>SHELL PRELUDE FLNG</h3><p>대형 해양플랜트 전기·계장 통합 시운전</p>
         <div class="meta"><span>삼성중공업</span><span>E&amp;I</span></div></article>
     </div>
 
-    <div class="rec reveal">
+    <div class="rec rv">
       <div class="rec__row"><div class="yr">2024</div><div class="nm">NOC GALLAF Project<small>Jansz IO Compression Control Station</small></div><div class="cl">한화오션</div><div class="role">Control Station</div></div>
       <div class="rec__row"><div class="yr">2020</div><div class="nm">PETROBRAS P78 FPSO<small>신조 FPSO Hull (EPC) 시운전</small></div><div class="cl">현대중공업</div><div class="role">Hull</div></div>
       <div class="rec__row"><div class="yr">2017</div><div class="nm">CHEVRON TCO FGP<small>고압 전력 시스템 및 통합 시운전 수행</small></div><div class="cl">대우조선해양 · 신한</div><div class="role">HV · Integrated</div></div>
@@ -109,14 +109,14 @@
 </section>
 
 <!-- OVERSEAS -->
-<section class="sec sec--off" id="overseas">
+<section class="sec sec--paper2" id="overseas" data-nav="light">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><b>／ 02</b> Overseas · Global EPC</span>
+    <div class="sec-head rv">
+      <span class="eyebrow"><b>／ 02</b>&nbsp; Overseas · Global EPC</span>
       <h2 class="d2">글로벌 EPC<br>프로젝트</h2>
       <p class="lead">2007년부터 글로벌 EPC·오일메이저 프로젝트에서 기술력을 증명해 왔으며, 해외 Offshore 및 친환경 시스템(FGSS) 시운전을 직접 수행합니다.</p>
     </div>
-    <div class="rec reveal">
+    <div class="rec rv">
       <div class="rec__row"><div class="yr">Global</div><div class="nm">Woodside TRION<small>해외 Offshore EPC 통합 시운전 수행</small></div><div class="cl">SAIPEM (offshore)</div><div class="role">Offshore EPC</div></div>
       <div class="rec__row"><div class="yr">Global</div><div class="nm">FGSS Full 시운전<small>FGSS 전체 시운전 수행 · Shenzhen / Hanoi</small></div><div class="cl">SB선보 · GSI조선</div><div class="role">FGSS</div></div>
     </div>
@@ -124,14 +124,14 @@
 </section>
 
 <!-- CLIENTS -->
-<section class="sec" id="clients">
+<section class="sec sec--paper" id="clients" data-nav="light">
   <div class="wrap">
-    <div class="sec-head reveal" style="text-align:center;max-width:720px;margin-inline:auto">
-      <span class="eyebrow" style="justify-content:center"><b>／ 03</b> Our Clients</span>
+    <div class="cli__intro rv">
+      <span class="eyebrow"><b>／ 03</b>&nbsp; Our Clients</span>
       <h2 class="d2">주요 고객사</h2>
-      <p class="lead" style="margin-inline:auto">국내 대형 조선소와 글로벌 EPC · 오일메이저와 함께 프로젝트를 수행해 왔습니다.</p>
+      <p class="lead">국내 대형 조선소와 글로벌 EPC · 오일메이저와 함께 프로젝트를 수행해 왔습니다.</p>
     </div>
-    <div class="wall reveal">
+    <div class="wall rv">
       <i><img src="assets/logos/samsung-hi.png" alt="삼성중공업" loading="lazy"></i>
       <i><img src="assets/logos/hyundai-hi.png" alt="현대중공업" loading="lazy"></i>
       <i><img src="assets/logos/hanwha-ocean.png" alt="한화오션" loading="lazy"></i>
@@ -157,11 +157,11 @@
 </main>
 
 <!-- FOOTER -->
-<footer class="foot" id="contact">
+<footer class="foot" id="contact" data-nav="dark">
   <div class="foot__cta">
     <div class="wrap">
       <h2>프로젝트의 마지막 순간,<br><em>케이원이 함께하겠습니다</em></h2>
-      <a class="btn btn--orange" href="contact.html"><span>문의하기</span>
+      <a class="btn btn--solid" href="contact.html"><span>고객문의</span>
         <svg viewBox="0 0 40 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 6h37M32 1l6 5-6 5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
@@ -176,7 +176,7 @@
       <div class="foot__col"><h4>프로젝트 실적</h4><a href="projects.html#domestic">국내 프로젝트</a><a href="projects.html#overseas">해외 프로젝트</a><a href="projects.html#clients">주요 고객사</a></div>
       <div class="foot__col"><h4>인재채용</h4><a href="recruit.html">채용안내</a><a href="recruit.html#jobs">채용공고</a></div>
       <div class="foot__col"><h4>홍보센터</h4><a href="news.html">게시판</a><a href="news.html#gallery">갤러리</a></div>
-      <div class="foot__col"><h4>고객문의</h4><a href="contact.html">문의하기</a><a href="contact.html#map">오시는 길</a></div>
+      <div class="foot__col"><h4>고객문의</h4><a href="contact.html#inquiry">문의하기</a><a href="contact.html#map">오시는 길</a></div>
     </div>
   </div>
   <div class="wrap foot__info">
@@ -188,17 +188,12 @@
   <div class="wrap foot__bot">© 2026 (주)케이원 (K1 Co., Ltd.) · K1 OCEAN — All rights reserved.</div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/v2.js"></script>
 <script>
-/* pagenav active state */
 (function(){
   var links=[].slice.call(document.querySelectorAll('.pagenav a'));
   var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
-  var onScroll=function(){
-    var y=window.scrollY+150;var idx=0;
-    secs.forEach(function(s,i){if(s&&s.offsetTop<=y)idx=i;});
-    links.forEach(function(a,i){a.classList.toggle('on',i===idx);});
-  };
+  var onScroll=function(){var y=window.scrollY+170;var idx=0;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)idx=i;});links.forEach(function(a,i){a.classList.toggle('on',i===idx);});};
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 })();
 </script>

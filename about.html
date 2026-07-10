@@ -8,19 +8,20 @@
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/v2.css">
 </head>
 <body class="sub">
+<a class="skip" href="#main">본문 바로가기</a>
 
 <!-- HEADER -->
-<header class="head stuck" id="head">
+<header class="head" id="head">
   <div class="head__in">
     <a class="brand" href="index.html" aria-label="(주)케이원 · K1 OCEAN">
-      <img class="l-dark" src="assets/logo-k1ocean-dark.png" alt="K1 OCEAN">
-      <img class="l-light" src="assets/logo-k1ocean.png" alt="K1 OCEAN">
-      <span class="brand__name">(주)케이원</span>
+      <img class="brand--dark" src="assets/logo-k1ocean-dark.png" alt="K1 OCEAN">
+      <img class="brand--light" src="assets/logo-k1ocean.png" alt="K1 OCEAN">
+      <b>(주)케이원</b>
     </a>
-    <div class="navwrap">
+    <div class="gnbwrap">
       <nav aria-label="주 메뉴"><ul class="gnb">
         <li><a href="about.html">회사소개</a></li>
         <li><a href="business.html">사업분야</a></li>
@@ -35,31 +36,30 @@
         <div class="mega__col"><h5>프로젝트 실적</h5><a href="projects.html#domestic">국내 프로젝트</a><a href="projects.html#overseas">해외 프로젝트</a><a href="projects.html#clients">주요 고객사</a></div>
         <div class="mega__col"><h5>인재채용</h5><a href="recruit.html">채용안내</a><a href="recruit.html#jobs">채용공고</a></div>
         <div class="mega__col"><h5>홍보센터</h5><a href="news.html">게시판</a><a href="news.html#gallery">갤러리</a></div>
-        <div class="mega__col"><h5>고객문의</h5><a href="contact.html">문의하기</a><a href="contact.html#map">오시는 길</a></div>
+        <div class="mega__col"><h5>고객문의</h5><a href="contact.html#inquiry">문의하기</a><a href="contact.html#map">오시는 길</a></div>
       </div></div>
     </div>
     <div class="head__r">
-      <span class="lang"><b>KR</b> · EN</span>
+      <span class="head__lang"><b>KR</b> · EN</span>
       <a class="head__cta" href="contact.html">고객문의</a>
-      <button class="burger" id="burger" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+      <button class="burger" id="burger" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <div class="drawer" id="drawer" aria-hidden="true">
-  <button class="drawer__x" id="drawerX" aria-label="닫기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round"/></svg></button>
-  <ul>
-    <li><a href="about.html">회사소개</a><div class="drawer__sub"><a href="about.html#ceo">CEO 인사말</a><a href="about.html#overview">회사개요</a><a href="about.html#org">조직도</a></div></li>
-    <li><a href="business.html">사업분야</a><div class="drawer__sub"><a href="business.html#commissioning">시운전</a><a href="business.html#support">기술지원</a><a href="business.html#maintenance">유지보수</a></div></li>
-    <li><a href="projects.html">프로젝트 실적</a><div class="drawer__sub"><a href="projects.html#domestic">국내</a><a href="projects.html#overseas">해외</a><a href="projects.html#clients">주요 고객사</a></div></li>
-    <li><a href="recruit.html">인재채용</a></li>
-    <li><a href="news.html">홍보센터</a></li>
-    <li><a href="contact.html">고객문의</a></li>
-  </ul>
+  <div class="drawer__grp"><b><a href="about.html">회사소개</a></b><div class="sub"><a href="about.html#ceo">CEO 인사말</a><a href="about.html#overview">회사개요</a><a href="about.html#org">조직도</a></div></div>
+  <div class="drawer__grp"><b><a href="business.html">사업분야</a></b><div class="sub"><a href="business.html#commissioning">시운전</a><a href="business.html#support">기술지원</a><a href="business.html#maintenance">유지보수</a></div></div>
+  <div class="drawer__grp"><b><a href="projects.html">프로젝트 실적</a></b><div class="sub"><a href="projects.html#domestic">국내</a><a href="projects.html#overseas">해외</a><a href="projects.html#clients">주요 고객사</a></div></div>
+  <div class="drawer__grp"><b><a href="recruit.html">인재채용</a></b><div class="sub"><a href="recruit.html">채용안내</a><a href="recruit.html#jobs">채용공고</a></div></div>
+  <div class="drawer__grp"><b><a href="news.html">홍보센터</a></b><div class="sub"><a href="news.html">게시판</a><a href="news.html#gallery">갤러리</a></div></div>
+  <div class="drawer__grp"><b><a href="contact.html">고객문의</a></b><div class="sub"><a href="contact.html#inquiry">문의하기</a><a href="contact.html#map">오시는 길</a></div></div>
+  <a class="btn btn--solid drawer__cta" href="contact.html"><span>고객문의</span>
+    <svg viewBox="0 0 40 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 6h37M32 1l6 5-6 5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div>
 
 <!-- SUB HERO -->
-<section class="subhero">
+<section class="subhero" data-nav="dark">
   <div class="wrap">
     <div class="bc"><a href="index.html">홈</a> <b>›</b> 회사소개</div>
     <h1>회사소개</h1>
@@ -76,17 +76,22 @@
   </div>
 </nav>
 
-<main>
+<main id="main">
 
 <!-- CEO MESSAGE -->
-<section class="sec" id="ceo">
+<section class="sec sec--paper" id="ceo" data-nav="light">
   <div class="wrap">
-    <div class="sec-head reveal" style="margin-bottom:clamp(40px,5vw,64px)">
-      <span class="eyebrow"><b>／ 01</b> CEO Message</span>
-    </div>
+    <div class="sec-head rv"><span class="eyebrow"><b>／ 01</b>&nbsp; CEO Message</span></div>
     <div class="cmsg">
-      <div class="cmsg__ph ph reveal"><div class="ph__c"></div><span class="ph__tag">Image — 대표이사</span></div>
-      <div class="reveal" data-d="1">
+      <div class="cmsg__img viz rv" style="--gx:64%;--gy:34%">
+        <svg class="viz__art" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+          <circle cx="300" cy="300" r="90" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M170 560 q0 -150 130 -150 q130 0 130 150" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M300 620 V800 M120 700 H480" class="sig" stroke="currentColor" stroke-width="1.2" opacity=".5"/>
+        </svg>
+        <span class="viz__tag">Image — 대표이사</span>
+      </div>
+      <div class="rv">
         <p class="cmsg__q">현장은 언제나<br><em>예측하지 못한 변수</em>로<br>시작됩니다</p>
         <div class="cmsg__body">안녕하십니까. (주)케이원 대표이사 강상운입니다. 저는 회사를 크게 만드는 일보다, 끝까지 믿을 수 있는 회사를 만드는 일이 더 중요하다고 믿습니다. 현장은 늘 예측하지 못한 변수로 시작됩니다. 하지만 고객이 우리에게 기대하는 것은 단 하나입니다. 약속한 시간, 흔들림 없는 품질, 그리고 끝까지 책임지는 결과입니다. 케이원은 축적된 기술과 현장 경험을 바탕으로 설계와 시공의 결과를 안정적인 가동과 운영으로 연결해 왔습니다. 시작부터 마지막 순간까지, 그 모든 과정을 책임지는 것이 우리의 역할입니다. 저는 작은 기준을 쉽게 넘기는 회사를 만들지 않겠습니다. 보이지 않는 위험까지 먼저 살피고, 끝까지 결과의 품격을 지키겠습니다. 케이원의 미래는 규모가 아니라, 신뢰로 증명됩니다. 더 많은 일을 하는 회사가 아니라, 더 중요한 프로젝트를 가장 먼저 맡기고 싶은 회사로 성장하겠습니다. 고객에게는 가장 신뢰받는 파트너로, 함께하는 사람들에게는 가장 자부심 있는 회사로 케이원을 만들겠습니다. 감사합니다.</div>
         <div class="cmsg__sign">(주)케이원 대표이사 <b>강상운</b></div>
@@ -96,14 +101,14 @@
 </section>
 
 <!-- HISTORY -->
-<section class="sec sec--off">
+<section class="sec sec--paper2" data-nav="light">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><b>／ 02</b> Company History</span>
+    <div class="sec-head rv">
+      <span class="eyebrow"><b>／ 02</b>&nbsp; Company History</span>
       <h2 class="d2">회사 연혁</h2>
       <p class="lead">대표이사 20년 업력과 9년의 신뢰, 260명 전문 인력으로 성장해 온 케이원입니다.</p>
     </div>
-    <div class="hist reveal">
+    <div class="hist rv">
       <div class="hist__i"><div class="k">대표이사 업력</div><div class="v">20년</div></div>
       <div class="hist__i"><div class="k">창립</div><div class="v">9주년<small>Since 2017</small></div></div>
       <div class="hist__i"><div class="k">인증</div><div class="v">우수 중소기업<small>좋은 일자리 · 기술 혁신 중소기업</small></div></div>
@@ -115,22 +120,22 @@
 </section>
 
 <!-- OVERVIEW -->
-<section class="sec" id="overview">
+<section class="sec sec--paper" id="overview" data-nav="light">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><b>／ 03</b> Company Overview</span>
+    <div class="sec-head rv">
+      <span class="eyebrow"><b>／ 03</b>&nbsp; Company Overview</span>
       <h2 class="d2">회사 개요</h2>
       <p class="lead">해양플랜트·조선·에너지 산업의 시스템 완성과 성능 구현을 책임지는 통합 시운전 전문 기업</p>
     </div>
-    <dl class="def reveal">
+    <dl class="def rv">
       <div class="def__row"><dt>회사명</dt><dd>주식회사 케이원 (K1 Co., Ltd.)</dd></div>
       <div class="def__row"><dt>설립일</dt><dd>2017년 07월 01일 (창립 9주년)</dd></div>
       <div class="def__row"><dt>대표이사</dt><dd>강상운 (Dennis Kang)</dd></div>
       <div class="def__row"><dt>사업 업종</dt><dd>해양플랜트 · 조선 · 에너지 산업의 시스템 완성과 성능 구현을 책임지는 통합 시운전 전문 기업</dd></div>
     </dl>
 
-    <div class="sec-head reveal" style="margin:clamp(60px,7vw,90px) 0 0"><span class="eyebrow">보유 기술</span></div>
-    <div class="tech reveal">
+    <div class="sec-head rv" style="margin:clamp(60px,7vw,90px) 0 0"><span class="eyebrow">보유 기술</span></div>
+    <div class="tech rv">
       <div class="tech__i"><div class="n">01</div><h4>전기 시운전</h4><p>발전기·변압기·배전반·보호계전기 시험 및 계통 연계를 통해 전력 시스템의 안정성과 신뢰성을 확보</p></div>
       <div class="tech__i"><div class="n">02</div><h4>계장 시운전</h4><p>DCS/PLC 루프체크, 계측기 교정, 인터록 및 트립 시험 수행으로 정밀 제어 시스템 완성도 구현</p></div>
       <div class="tech__i"><div class="n">03</div><h4>기계 시운전</h4><p>기계 설비 전반에 대한 성능 검증(Performance Test)을 통해 설비의 최적 운전 조건 확보</p></div>
@@ -140,10 +145,10 @@
       <div class="tech__i" style="grid-column:1/-1"><div class="n">07</div><h4>프로젝트 관리</h4><p>Punch 관리, 공정 통제, 품질 문서화, 글로벌 협업을 통한 프로젝트 전 과정 통합 관리</p></div>
     </div>
 
-    <div class="mv reveal">
+    <div class="mv rv">
       <div class="mv__c">
         <div class="k">Mission · 미션</div>
-        <ol><li>a. 안전한 시운전 수행</li><li>b. 최적의 솔루션 제공</li><li>c. 고객 성공 지원</li></ol>
+        <ol><li>안전한 시운전 수행</li><li>최적의 솔루션 제공</li><li>고객 성공 지원</li></ol>
       </div>
       <div class="mv__c dark">
         <div class="k">Vision · 비전</div>
@@ -156,14 +161,14 @@
 </section>
 
 <!-- PRINCIPLES -->
-<section class="sec sec--off" id="principles">
+<section class="sec sec--paper2" id="principles" data-nav="light">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><b>／ 04</b> Management Principles</span>
+    <div class="sec-head rv">
+      <span class="eyebrow"><b>／ 04</b>&nbsp; Management Principles</span>
       <h2 class="d2">경영 방침</h2>
       <p class="lead">원칙은 분명하게, 협업은 유연하게, 책임은 끝까지.</p>
     </div>
-    <div class="prin reveal">
+    <div class="prin rv">
       <div class="prin__row"><div class="n"><i class="ic i-trust" aria-hidden="true"></i>01</div><div class="t">분명한 기준<b>Trust · 신뢰</b></div><p>우리는 모든 업무를 명확한 원칙과 근거 위에서 판단합니다. 일관된 운영과 투명한 소통으로 신뢰의 기준을 세웁니다.</p></div>
       <div class="prin__row"><div class="n"><i class="ic i-collab" aria-hidden="true"></i>02</div><div class="t">유연한 협업<b>Collaboration · 협업</b></div><p>고객·파트너·구성원이 같은 방향으로 움직일 수 있도록 열린 태도로 협업하며 더 나은 결과를 함께 만들어갑니다.</p></div>
       <div class="prin__row"><div class="n"><i class="ic i-responsibility" aria-hidden="true"></i>03</div><div class="t">끝까지 책임<b>Responsibility · 책임</b></div><p>맡은 일은 시작보다 마무리가 더 중요합니다. 우리는 약속한 품질과 일정, 마지막 순간까지 책임 있게 완성합니다.</p></div>
@@ -172,14 +177,14 @@
 </section>
 
 <!-- ORGANIZATION -->
-<section class="sec" id="org">
+<section class="sec sec--paper" id="org" data-nav="light">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><b>／ 05</b> Organization</span>
+    <div class="sec-head rv">
+      <span class="eyebrow"><b>／ 05</b>&nbsp; Organization</span>
       <h2 class="d2">조직도</h2>
       <p class="lead">Turnkey Base를 기반으로, 케이원과 케이원오션 두 축이 프로젝트 전 과정을 함께 수행합니다.</p>
     </div>
-    <div class="org reveal">
+    <div class="org rv">
       <div class="org__top">주식회사 케이원</div>
       <div class="org__line"></div>
       <div class="org__cols">
@@ -201,11 +206,11 @@
 </main>
 
 <!-- FOOTER -->
-<footer class="foot" id="contact">
+<footer class="foot" id="contact" data-nav="dark">
   <div class="foot__cta">
     <div class="wrap">
       <h2>프로젝트의 마지막 순간,<br><em>케이원이 함께하겠습니다</em></h2>
-      <a class="btn btn--orange" href="mailto:k1ocean@k1tnc.co.kr"><span>문의하기</span>
+      <a class="btn btn--solid" href="contact.html"><span>고객문의</span>
         <svg viewBox="0 0 40 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 6h37M32 1l6 5-6 5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
@@ -220,7 +225,7 @@
       <div class="foot__col"><h4>프로젝트 실적</h4><a href="projects.html#domestic">국내 프로젝트</a><a href="projects.html#overseas">해외 프로젝트</a><a href="projects.html#clients">주요 고객사</a></div>
       <div class="foot__col"><h4>인재채용</h4><a href="recruit.html">채용안내</a><a href="recruit.html#jobs">채용공고</a></div>
       <div class="foot__col"><h4>홍보센터</h4><a href="news.html">게시판</a><a href="news.html#gallery">갤러리</a></div>
-      <div class="foot__col"><h4>고객문의</h4><a href="contact.html">문의하기</a><a href="contact.html#map">오시는 길</a></div>
+      <div class="foot__col"><h4>고객문의</h4><a href="contact.html#inquiry">문의하기</a><a href="contact.html#map">오시는 길</a></div>
     </div>
   </div>
   <div class="wrap foot__info">
@@ -232,17 +237,12 @@
   <div class="wrap foot__bot">© 2026 (주)케이원 (K1 Co., Ltd.) · K1 OCEAN — All rights reserved.</div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/v2.js"></script>
 <script>
-/* pagenav active state */
 (function(){
   var links=[].slice.call(document.querySelectorAll('.pagenav a'));
   var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
-  var onScroll=function(){
-    var y=window.scrollY+150;var idx=0;
-    secs.forEach(function(s,i){if(s&&s.offsetTop<=y)idx=i;});
-    links.forEach(function(a,i){a.classList.toggle('on',i===idx);});
-  };
+  var onScroll=function(){var y=window.scrollY+170;var idx=0;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)idx=i;});links.forEach(function(a,i){a.classList.toggle('on',i===idx);});};
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 })();
 </script>

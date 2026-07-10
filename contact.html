@@ -8,19 +8,20 @@
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/v2.css">
 </head>
 <body class="sub">
+<a class="skip" href="#main">본문 바로가기</a>
 
 <!-- HEADER -->
-<header class="head stuck" id="head">
+<header class="head" id="head">
   <div class="head__in">
     <a class="brand" href="index.html" aria-label="(주)케이원 · K1 OCEAN">
-      <img class="l-dark" src="assets/logo-k1ocean-dark.png" alt="K1 OCEAN">
-      <img class="l-light" src="assets/logo-k1ocean.png" alt="K1 OCEAN">
-      <span class="brand__name">(주)케이원</span>
+      <img class="brand--dark" src="assets/logo-k1ocean-dark.png" alt="K1 OCEAN">
+      <img class="brand--light" src="assets/logo-k1ocean.png" alt="K1 OCEAN">
+      <b>(주)케이원</b>
     </a>
-    <div class="navwrap">
+    <div class="gnbwrap">
       <nav aria-label="주 메뉴"><ul class="gnb">
         <li><a href="about.html">회사소개</a></li>
         <li><a href="business.html">사업분야</a></li>
@@ -35,31 +36,30 @@
         <div class="mega__col"><h5>프로젝트 실적</h5><a href="projects.html#domestic">국내 프로젝트</a><a href="projects.html#overseas">해외 프로젝트</a><a href="projects.html#clients">주요 고객사</a></div>
         <div class="mega__col"><h5>인재채용</h5><a href="recruit.html">채용안내</a><a href="recruit.html#jobs">채용공고</a></div>
         <div class="mega__col"><h5>홍보센터</h5><a href="news.html">게시판</a><a href="news.html#gallery">갤러리</a></div>
-        <div class="mega__col"><h5>고객문의</h5><a href="contact.html">문의하기</a><a href="contact.html#map">오시는 길</a></div>
+        <div class="mega__col"><h5>고객문의</h5><a href="contact.html#inquiry">문의하기</a><a href="contact.html#map">오시는 길</a></div>
       </div></div>
     </div>
     <div class="head__r">
-      <span class="lang"><b>KR</b> · EN</span>
+      <span class="head__lang"><b>KR</b> · EN</span>
       <a class="head__cta" href="contact.html">고객문의</a>
-      <button class="burger" id="burger" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+      <button class="burger" id="burger" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <div class="drawer" id="drawer" aria-hidden="true">
-  <button class="drawer__x" id="drawerX" aria-label="닫기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round"/></svg></button>
-  <ul>
-    <li><a href="about.html">회사소개</a><div class="drawer__sub"><a href="about.html#ceo">CEO 인사말</a><a href="about.html#overview">회사개요</a><a href="about.html#org">조직도</a></div></li>
-    <li><a href="business.html">사업분야</a><div class="drawer__sub"><a href="business.html#commissioning">시운전</a><a href="business.html#support">기술지원</a><a href="business.html#maintenance">유지보수</a></div></li>
-    <li><a href="projects.html">프로젝트 실적</a><div class="drawer__sub"><a href="projects.html#domestic">국내</a><a href="projects.html#overseas">해외</a><a href="projects.html#clients">주요 고객사</a></div></li>
-    <li><a href="recruit.html">인재채용</a></li>
-    <li><a href="news.html">홍보센터</a></li>
-    <li><a href="contact.html">고객문의</a></li>
-  </ul>
+  <div class="drawer__grp"><b><a href="about.html">회사소개</a></b><div class="sub"><a href="about.html#ceo">CEO 인사말</a><a href="about.html#overview">회사개요</a><a href="about.html#org">조직도</a></div></div>
+  <div class="drawer__grp"><b><a href="business.html">사업분야</a></b><div class="sub"><a href="business.html#commissioning">시운전</a><a href="business.html#support">기술지원</a><a href="business.html#maintenance">유지보수</a></div></div>
+  <div class="drawer__grp"><b><a href="projects.html">프로젝트 실적</a></b><div class="sub"><a href="projects.html#domestic">국내</a><a href="projects.html#overseas">해외</a><a href="projects.html#clients">주요 고객사</a></div></div>
+  <div class="drawer__grp"><b><a href="recruit.html">인재채용</a></b><div class="sub"><a href="recruit.html">채용안내</a><a href="recruit.html#jobs">채용공고</a></div></div>
+  <div class="drawer__grp"><b><a href="news.html">홍보센터</a></b><div class="sub"><a href="news.html">게시판</a><a href="news.html#gallery">갤러리</a></div></div>
+  <div class="drawer__grp"><b><a href="contact.html">고객문의</a></b><div class="sub"><a href="contact.html#inquiry">문의하기</a><a href="contact.html#map">오시는 길</a></div></div>
+  <a class="btn btn--solid drawer__cta" href="contact.html"><span>고객문의</span>
+    <svg viewBox="0 0 40 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 6h37M32 1l6 5-6 5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div>
 
 <!-- SUB HERO -->
-<section class="subhero">
+<section class="subhero" data-nav="dark">
   <div class="wrap">
     <div class="bc"><a href="index.html">홈</a> <b>›</b> 고객문의</div>
     <h1>고객문의</h1>
@@ -74,18 +74,18 @@
   </div>
 </nav>
 
-<main>
+<main id="main">
 
 <!-- INQUIRY -->
-<section class="sec" id="inquiry">
+<section class="sec sec--paper" id="inquiry" data-nav="light">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><b>／ 01</b> Inquiry</span>
+    <div class="sec-head rv">
+      <span class="eyebrow"><b>／ 01</b>&nbsp; Inquiry</span>
       <h2 class="d2">문의하기</h2>
       <p class="lead">프로젝트 문의, 협업 제안, 견적 요청 등 무엇이든 아래 채널로 연락 주시면 담당자가 신속히 답변드리겠습니다.</p>
     </div>
 
-    <div class="cwrap reveal">
+    <div class="cwrap rv">
       <div class="cinfo">
         <div class="cinfo__i"><i class="ic i-phone" aria-hidden="true"></i><div class="k">대표 전화</div><a class="v" href="tel:055-736-5959">055-736-5959</a></div>
         <div class="cinfo__i"><i class="ic i-fax" aria-hidden="true"></i><div class="k">팩스</div><div class="v">055-736-6969</div></div>
@@ -104,7 +104,7 @@
           <label class="cf">연락처<input type="tel" name="연락처" placeholder="010-0000-0000"></label>
         </div>
         <label class="cf">문의 내용 <span>*</span><textarea name="문의내용" rows="6" required placeholder="문의하실 내용을 입력해 주세요."></textarea></label>
-        <button type="submit" class="btn btn--orange"><span>문의 보내기</span>
+        <button type="submit" class="btn btn--solid"><span>문의 보내기</span>
           <svg viewBox="0 0 40 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 6h37M32 1l6 5-6 5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <p class="cform__hint">‘문의 보내기’를 누르면 메일 프로그램으로 내용이 전달됩니다. 바로 <a href="mailto:k1ocean@k1tnc.co.kr">k1ocean@k1tnc.co.kr</a> 로 보내주셔도 됩니다.</p>
       </form>
@@ -113,24 +113,24 @@
 </section>
 
 <!-- MAP / LOCATIONS -->
-<section class="sec sec--off" id="map">
+<section class="sec sec--paper2" id="map" data-nav="light">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><b>／ 02</b> Location</span>
+    <div class="sec-head rv">
+      <span class="eyebrow"><b>／ 02</b>&nbsp; Location</span>
       <h2 class="d2">오시는 길</h2>
       <p class="lead">거제 본사와 영암 · 울산 지사에서 현장 가까이 서비스를 제공합니다.</p>
     </div>
-    <div class="loc reveal">
+    <div class="loc rv">
       <div class="loc__i">
-        <div class="ph"><div class="ph__c"></div><span class="ph__tag">Map — 본사 (거제)</span></div>
+        <div class="viz"><span class="viz__tag">Map — 본사 (거제)</span></div>
         <div class="loc__b"><div class="tag">본사 · HQ</div><h3>거제 본사</h3><p>경남 거제시 옥포대첩로 59, 2F</p><div class="loc__c"><span>TEL 055-736-5959</span><span>FAX 055-736-6969</span></div></div>
       </div>
       <div class="loc__i">
-        <div class="ph"><div class="ph__c"></div><span class="ph__tag">Map — 영암 지사</span></div>
+        <div class="viz"><span class="viz__tag">Map — 영암 지사</span></div>
         <div class="loc__b"><div class="tag">지사 · Branch</div><h3>영암 지사</h3><p>전남 영암군 삼호읍 대불로 93</p><div class="loc__c"><span>HD현대삼호 · 대불산단 인근</span></div></div>
       </div>
       <div class="loc__i">
-        <div class="ph"><div class="ph__c"></div><span class="ph__tag">Map — 울산 지사</span></div>
+        <div class="viz"><span class="viz__tag">Map — 울산 지사</span></div>
         <div class="loc__b"><div class="tag">지사 · Branch</div><h3>울산 지사</h3><p>울산 동구 방어진순환도로 400</p><div class="loc__c"><span>HD현대중공업 인근</span></div></div>
       </div>
     </div>
@@ -140,11 +140,11 @@
 </main>
 
 <!-- FOOTER -->
-<footer class="foot">
+<footer class="foot" data-nav="dark">
   <div class="foot__cta">
     <div class="wrap">
       <h2>프로젝트의 마지막 순간,<br><em>케이원이 함께하겠습니다</em></h2>
-      <a class="btn btn--orange" href="mailto:k1ocean@k1tnc.co.kr"><span>이메일 문의</span>
+      <a class="btn btn--solid" href="mailto:k1ocean@k1tnc.co.kr"><span>이메일 문의</span>
         <svg viewBox="0 0 40 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 6h37M32 1l6 5-6 5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
@@ -159,7 +159,7 @@
       <div class="foot__col"><h4>프로젝트 실적</h4><a href="projects.html#domestic">국내 프로젝트</a><a href="projects.html#overseas">해외 프로젝트</a><a href="projects.html#clients">주요 고객사</a></div>
       <div class="foot__col"><h4>인재채용</h4><a href="recruit.html">채용안내</a><a href="recruit.html#jobs">채용공고</a></div>
       <div class="foot__col"><h4>홍보센터</h4><a href="news.html">게시판</a><a href="news.html#gallery">갤러리</a></div>
-      <div class="foot__col"><h4>고객문의</h4><a href="contact.html">문의하기</a><a href="contact.html#map">오시는 길</a></div>
+      <div class="foot__col"><h4>고객문의</h4><a href="contact.html#inquiry">문의하기</a><a href="contact.html#map">오시는 길</a></div>
     </div>
   </div>
   <div class="wrap foot__info">
@@ -171,17 +171,12 @@
   <div class="wrap foot__bot">© 2026 (주)케이원 (K1 Co., Ltd.) · K1 OCEAN — All rights reserved.</div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/v2.js"></script>
 <script>
-/* pagenav active state */
 (function(){
   var links=[].slice.call(document.querySelectorAll('.pagenav a'));
   var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
-  var onScroll=function(){
-    var y=window.scrollY+150;var idx=0;
-    secs.forEach(function(s,i){if(s&&s.offsetTop<=y)idx=i;});
-    links.forEach(function(a,i){a.classList.toggle('on',i===idx);});
-  };
+  var onScroll=function(){var y=window.scrollY+170;var idx=0;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)idx=i;});links.forEach(function(a,i){a.classList.toggle('on',i===idx);});};
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 })();
 </script>
