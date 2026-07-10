@@ -275,7 +275,7 @@ body.lock{overflow:hidden}
 .about__txt .lead{margin-top:28px;max-width:42ch}
 .vals{margin-top:clamp(60px,7vw,110px);display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--ink)}
 .val{padding:clamp(28px,2.8vw,40px) clamp(22px,2.4vw,40px) 0 0;position:relative}
-.val .ic{width:46px;height:46px;color:var(--orange);margin-bottom:22px}
+.val .ic{width:clamp(68px,6.5vw,92px);height:clamp(68px,6.5vw,92px);margin-bottom:26px}
 .val h3{font-size:clamp(21px,2vw,27px);font-weight:800;letter-spacing:-.02em}
 .val h3 b{display:block;font-size:12px;font-weight:600;color:var(--ink-mut);letter-spacing:.06em;margin-top:8px}
 .val p{margin-top:16px;font-size:15.5px;color:var(--ink-mut);line-height:1.8}
