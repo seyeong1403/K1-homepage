@@ -174,8 +174,6 @@ em{font-style:normal;color:var(--orange)}
 .mega__col a:hover::before{width:14px;margin-right:9px}
 
 .head__r{justify-self:end;display:flex;align-items:center;gap:22px}
-.head__lang{font-size:13px;font-weight:600;letter-spacing:.05em;opacity:.75}
-.head__lang b{opacity:1;color:var(--orange)}
 .head__cta{display:inline-flex;align-items:center;gap:9px;padding:12px 22px;background:var(--orange);color:#fff;font-size:14px;font-weight:600;transition:background .35s}
 .head__cta:hover{background:var(--orange-ink)}
 .burger{display:none;width:46px;height:46px;flex-direction:column;justify-content:center;gap:6px}
@@ -417,7 +415,7 @@ body.lock{overflow:hidden}
    Responsive
    ===================================================================== */
 @media (max-width:1080px){
-  .gnb,.head__lang,.head__cta{display:none}
+  .gnb,.head__cta{display:none}
   .burger{display:flex}
   .head__in{grid-template-columns:1fr auto}
   .dom__in{grid-template-columns:1fr;gap:24px}
@@ -551,9 +549,11 @@ body.lock{overflow:hidden}
 .prin__row .t b{display:block;margin-top:8px;font-size:12.5px;font-weight:600;letter-spacing:.06em;color:var(--ink-mut)}
 .prin__row p{font-size:15.5px;color:var(--ink-mut);line-height:1.85}
 
-/* ---- ABOUT: org chart — TREE DIAGRAM (root → branch nodes → team nodes on spine) ---- */
+/* ---- ABOUT: org chart — SHAPE-BASED TREE (root box → division boxes → team boxes) ---- */
 .orgc{position:relative}
-.orgc__root{display:table;margin-inline:auto;background:var(--bg0);color:#fff;padding:20px 46px;border-radius:100px;
+/* root: filled navy box */
+.orgc__root{display:table;margin-inline:auto;background:var(--bg0);color:#fff;padding:22px 54px;
+  border-top:3px solid var(--orange);text-align:center;
   font-size:clamp(18px,1.8vw,25px);font-weight:800;letter-spacing:-.02em;position:relative;z-index:1}
 .orgc__stem{width:2px;height:46px;background:var(--line-l2);margin:0 auto}
 .orgc__branches{--g:clamp(24px,3.4vw,56px);display:grid;grid-template-columns:1fr 1fr;gap:var(--g);position:relative;padding-top:46px}
@@ -561,19 +561,24 @@ body.lock{overflow:hidden}
 .orgc__branches::before{content:"";position:absolute;top:0;left:calc((100% - var(--g))/4);right:calc((100% - var(--g))/4);height:2px;background:var(--line-l2)}
 .orgc__branch{position:relative}
 .orgc__branch::before{content:"";position:absolute;top:-46px;left:50%;transform:translateX(-50%);width:2px;height:46px;background:var(--line-l2)}
+/* division box */
 .orgc__node{border:1px solid var(--line-l2);border-top:3px solid var(--orange);background:#fff;padding:clamp(20px,2vw,28px) clamp(18px,2vw,28px);text-align:center}
 .orgc__node h4{font-size:clamp(20px,1.9vw,27px);font-weight:800;letter-spacing:-.02em}
 .orgc__node .sub{margin-top:8px;font-size:13px;letter-spacing:.02em;color:var(--ink-mut)}
-.orgc__teams{position:relative;margin-top:34px;padding-left:36px}
-.orgc__teams::before{content:"";position:absolute;left:9px;top:24px;bottom:24px;width:2px;background:linear-gradient(rgba(226,87,31,.9),rgba(226,87,31,.45))}
-.orgc__teams li{position:relative;padding:13px 0;border-bottom:1px solid var(--line-l);font-size:15.5px;color:var(--ink-2)}
-.orgc__teams li:last-child{border-bottom:0}
-.orgc__teams li::before{content:"";position:absolute;left:-32px;top:50%;transform:translateY(-50%);width:14px;height:14px;border-radius:50%;
-  background:var(--paper);border:2px solid rgba(226,87,31,.55);transition:border-color .35s,box-shadow .35s}
-.orgc__teams li::after{content:"";position:absolute;left:-16px;top:50%;width:14px;height:1px;background:var(--line-l2);transform:translateY(-50%)}
-.orgc__teams li:hover::before{border-color:var(--orange);box-shadow:0 0 0 4px rgba(226,87,31,.14)}
-/* branch drop into its own spine */
-.orgc__branch .orgc__teams::after{content:"";position:absolute;left:9px;top:-34px;width:2px;height:34px;background:var(--line-l2)}
+/* team boxes hanging off a vertical spine */
+.orgc__teams{--pl:clamp(30px,3vw,50px);--gp:12px;--sx:16px;position:relative;margin-top:44px;padding-left:var(--pl);display:grid;gap:var(--gp)}
+.orgc__teams li{position:relative;background:#fff;border:1px solid var(--line-l);border-left:3px solid var(--orange);
+  padding:15px 18px;font-size:15.5px;font-weight:600;color:var(--ink-2);
+  transition:transform .35s var(--e1),box-shadow .35s var(--e1),background .35s}
+/* spine segment per box, extended by half the gap so segments join into one line */
+.orgc__teams li::after{content:"";position:absolute;left:calc(var(--sx) - var(--pl) - 1px);
+  top:calc(var(--gp) / -2);bottom:calc(var(--gp) / -2);width:2px;background:var(--line-l2)}
+.orgc__teams li:first-child::after{top:-44px}
+.orgc__teams li:last-child::after{bottom:50%}
+/* elbow: spine centre → box left edge */
+.orgc__teams li::before{content:"";position:absolute;left:calc(var(--sx) - var(--pl));top:50%;
+  width:calc(var(--pl) - var(--sx));height:1px;background:var(--line-l2);transform:translateY(-50%)}
+.orgc__teams li:hover{background:var(--paper2);transform:translateX(3px);box-shadow:0 10px 26px -16px rgba(11,24,38,.4)}
 
 /* ---- NEWS: notice board list ---- */
 .board{border-top:2px solid var(--ink)}
