@@ -31,14 +31,23 @@
   /* mega menu — hover intent */
   var gnbwrap = document.querySelector('.gnbwrap');
   if (gnbwrap && !noHover) {
-    var mt;
+    var mt, hovering = false;
     var openM = function () { clearTimeout(mt); head.classList.add('mega-open'); };
     var closeM = function () { mt = setTimeout(function () { head.classList.remove('mega-open'); }, 220); };
-    gnbwrap.addEventListener('mouseenter', openM);
-    gnbwrap.addEventListener('mouseleave', closeM);
+    gnbwrap.addEventListener('mouseenter', function () { hovering = true; openM(); });
+    gnbwrap.addEventListener('mouseleave', function () { hovering = false; closeM(); });
+    /* 스크롤로 닫힌 뒤 커서가 메뉴 위에 그대로 머물러 있으면 mouseenter 가 다시 발생하지 않는다.
+       메뉴 영역 안에서 커서가 움직일 때도 다시 열어 준다. */
+    gnbwrap.addEventListener('mousemove', function () {
+      hovering = true;
+      if (!head.classList.contains('mega-open')) openM();
+    });
     gnbwrap.addEventListener('focusin', openM);
     gnbwrap.addEventListener('focusout', function (e) { if (!gnbwrap.contains(e.relatedTarget)) head.classList.remove('mega-open'); });
-    window.addEventListener('scroll', function () { if (head.classList.contains('mega-open')) head.classList.remove('mega-open'); }, { passive: true });
+    /* 커서가 메뉴 위에 있는 동안에는 스크롤(관성 포함)로 닫지 않는다 */
+    window.addEventListener('scroll', function () {
+      if (!hovering && head.classList.contains('mega-open')) head.classList.remove('mega-open');
+    }, { passive: true });
   }
 
   /* mobile drawer */
