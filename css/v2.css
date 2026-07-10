@@ -218,7 +218,10 @@ body.lock{overflow:hidden}
 .hero__top{flex:1;display:flex;align-items:center;padding-top:118px}
 .hero__eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:14px;font-weight:600;letter-spacing:.2em;color:#F1D9CB;margin-bottom:30px}
 .hero__eyebrow::before{content:"";width:34px;height:2px;background:var(--orange)}
-.hero h1{font-size:clamp(40px,7.1vw,108px);font-weight:800;line-height:1.01;letter-spacing:-.052em}
+/* 8.4vw → 1286px 부터 상한(108px)에 도달.
+   기존 7.1vw 는 1521px 부터라 1280~1520px(노트북·확대 환경)에서만 91~107px 로 작아졌다.
+   이제 데스크톱 전 구간에서 108px 로 동일하게 보인다. */
+.hero h1{font-size:clamp(40px,8.4vw,108px);font-weight:800;line-height:1.01;letter-spacing:-.052em}
 .hero h1 i{font-style:normal;color:var(--orange)}
 .hero__sub{margin-top:32px;font-size:clamp(16px,1.5vw,21px);line-height:1.75;color:rgba(228,236,244,.9);max-width:46ch;
   opacity:0;transform:translateY(18px);transition:opacity 1s var(--e2) .5s,transform 1s var(--e2) .5s}
