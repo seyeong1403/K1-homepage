@@ -274,7 +274,7 @@ body.lock{overflow:hidden}
 .about__txt .lead{margin-top:28px;max-width:42ch}
 .vals{margin-top:clamp(60px,7vw,110px);display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--ink)}
 .val{padding:clamp(28px,2.8vw,40px) clamp(22px,2.4vw,40px) 0 0;position:relative}
-.val .ic{width:30px;height:30px;color:var(--orange);margin-bottom:20px}
+.val .ic{width:46px;height:46px;color:var(--orange);margin-bottom:22px}
 .val h3{font-size:clamp(21px,2vw,27px);font-weight:800;letter-spacing:-.02em}
 .val h3 b{display:block;font-size:12px;font-weight:600;color:var(--ink-mut);letter-spacing:.06em;margin-top:8px}
 .val p{margin-top:16px;font-size:15.5px;color:var(--ink-mut);line-height:1.8}
@@ -297,13 +297,12 @@ body.lock{overflow:hidden}
 .cap__sys::before{content:"";position:absolute;left:9px;top:34px;bottom:34px;width:2px;background:linear-gradient(rgba(226,87,31,.9),rgba(226,87,31,.5))}
 .cap__node{position:relative;padding:clamp(24px,2.6vw,36px) 0;border-bottom:1px solid var(--line-d)}
 .cap__node:last-child{border-bottom:0}
-.cap__node::before{content:"";position:absolute;left:calc(-1*clamp(24px,4vw,60px) + 1px);top:50%;transform:translateY(-50%);
-  width:18px;height:18px;border-radius:50%;background:var(--bg0);border:2px solid rgba(151,178,203,.45);transition:border-color .4s,box-shadow .4s}
-.cap__node::after{content:"";position:absolute;left:calc(-1*clamp(24px,4vw,60px) + 19px);top:50%;width:clamp(14px,3vw,40px);height:1px;background:var(--line-d2);transform:translateY(-50%);transition:background .4s}
-.cap__node:hover::before{border-color:var(--orange);box-shadow:0 0 0 6px rgba(226,87,31,.15)}
-.cap__node:hover::after{background:var(--orange)}
 .cap__node .no{font-size:13px;font-weight:700;color:var(--orange);font-variant-numeric:tabular-nums;letter-spacing:.1em}
-.cap__node h3{font-size:clamp(23px,2.6vw,36px);font-weight:800;letter-spacing:-.03em;line-height:1.12;margin:9px 0 0;color:var(--hi);transition:color .3s}
+.cap__node h3{position:relative;font-size:clamp(23px,2.6vw,36px);font-weight:800;letter-spacing:-.03em;line-height:1.12;margin:9px 0 0;color:var(--hi);transition:color .3s}
+/* 노드 원: 제목(h3) 세로 중앙에 정확히 맞춘다 (가로 연결선 없음) */
+.cap__node h3::before{content:"";position:absolute;left:calc(-1*clamp(24px,4vw,60px) + 1px);top:50%;transform:translateY(-50%);
+  width:18px;height:18px;border-radius:50%;background:var(--bg0);border:2px solid rgba(151,178,203,.45);transition:border-color .4s,box-shadow .4s}
+.cap__node:hover h3::before{border-color:var(--orange);box-shadow:0 0 0 6px rgba(226,87,31,.15)}
 .cap__node:hover h3{color:#fff}
 .cap__node p{font-size:16px;color:var(--dim);line-height:1.8;max-width:56ch;
   max-height:0;opacity:0;overflow:hidden;transition:max-height .5s var(--e1),opacity .4s,margin-top .5s var(--e1)}
@@ -373,6 +372,32 @@ body.lock{overflow:hidden}
 .pj-card p{font-size:15px;color:var(--ink-mut)}
 .pj-card .meta{margin-top:14px;padding-top:14px;border-top:1px solid var(--line-l);display:flex;justify-content:space-between;gap:12px;font-size:12.5px;letter-spacing:.02em;color:var(--ink-mut)}
 
+/* ---- record table (projects.html: 국내 / 해외 실적) ---- */
+.rec{margin-top:clamp(40px,4.5vw,64px);border-top:2px solid var(--ink)}
+.rec__row{position:relative;display:grid;grid-template-columns:108px minmax(0,1.7fr) minmax(0,1fr) 168px;
+  gap:clamp(16px,2vw,32px);align-items:center;padding:clamp(22px,2.4vw,30px) 20px clamp(22px,2.4vw,30px) 16px;
+  border-bottom:1px solid var(--line-l);transition:background .35s var(--e1),padding-left .35s var(--e1)}
+/* hover 시 좌측에 오렌지 액센트 바가 자라난다 */
+.rec__row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--orange);
+  transform:scaleY(0);transform-origin:center;transition:transform .4s var(--e1)}
+.rec__row:hover{background:rgba(226,87,31,.045);padding-left:26px}
+.rec__row:hover::before{transform:scaleY(1)}
+.rec__row .yr{font-size:15px;font-weight:800;color:var(--orange);font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.rec__row .nm{font-size:clamp(18px,1.65vw,23px);font-weight:800;letter-spacing:-.025em;color:var(--ink);line-height:1.25}
+.rec__row .nm small{display:block;margin-top:7px;font-size:14.5px;font-weight:500;letter-spacing:0;color:var(--ink-mut);line-height:1.6}
+.rec__row .cl{font-size:15px;color:var(--ink-mut)}
+/* 역할은 라벨형 도형(pill)으로 — 표에서 눈에 띄게 */
+.rec__row .role{justify-self:end;display:inline-block;padding:8px 14px;border:1px solid var(--line-l2);border-radius:100px;
+  font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mut);white-space:nowrap;
+  transition:border-color .35s,color .35s,background .35s}
+.rec__row:hover .role{border-color:var(--orange);color:var(--orange-ink);background:#fff}
+
+@media (max-width:900px){
+  .rec__row{grid-template-columns:84px minmax(0,1fr);gap:6px 16px;padding-right:12px}
+  .rec__row .cl{grid-column:2}
+  .rec__row .role{grid-column:2;justify-self:start;margin-top:6px}
+}
+
 /* =====================================================================
    Clients — logo wall
    ===================================================================== */
@@ -397,7 +422,7 @@ body.lock{overflow:hidden}
 .certrow{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-d2)}
 .certc{padding:clamp(32px,3.4vw,52px) clamp(24px,2.4vw,38px) clamp(32px,3.4vw,52px) 0;position:relative}
 .certc+.certc{border-left:1px solid var(--line-d);padding-left:clamp(24px,2.4vw,38px)}
-.certc .ic{width:38px;height:38px;color:var(--orange);margin-bottom:26px}
+.certc .ic{width:50px;height:50px;color:var(--orange);margin-bottom:26px}
 .certc h3{font-size:clamp(22px,2.2vw,30px);font-weight:800;letter-spacing:-.02em;color:#fff}
 .certc .k{margin-top:12px;font-size:15px;color:var(--hi)}
 .certc .en{margin-top:4px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim-2)}
@@ -511,7 +536,7 @@ body.lock{overflow:hidden}
 
 /* ---- ABOUT: CEO message ---- */
 .cmsg{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(40px,6vw,88px);align-items:start}
-.cmsg__img{position:relative;aspect-ratio:3/4}
+.cmsg__img{position:relative;aspect-ratio:4/3}   /* 대표이사 실사진이 가로형(1.48:1)이라 세로 프레임 잘림 방지 */
 .cmsg__q{font-size:clamp(26px,3.4vw,48px);font-weight:800;letter-spacing:-.03em;line-height:1.18}
 .cmsg__q em{color:var(--orange)}
 .cmsg__body{margin-top:30px;font-size:16.5px;line-height:1.95;color:var(--ink-2)}
@@ -561,9 +586,9 @@ body.lock{overflow:hidden}
 
 /* ---- ABOUT: org chart — SHAPE-BASED TREE (root box → division boxes → team boxes) ---- */
 .orgc{position:relative}
-/* root: filled navy box */
+/* root: filled navy box (rounded) */
 .orgc__root{display:table;margin-inline:auto;background:var(--bg0);color:#fff;padding:22px 54px;
-  border-top:3px solid var(--orange);text-align:center;
+  border-radius:14px;text-align:center;
   font-size:clamp(18px,1.8vw,25px);font-weight:800;letter-spacing:-.02em;position:relative;z-index:1}
 .orgc__stem{width:2px;height:46px;background:var(--line-l2);margin:0 auto}
 .orgc__branches{--g:clamp(24px,3.4vw,56px);display:grid;grid-template-columns:1fr 1fr;gap:var(--g);position:relative;padding-top:46px}
@@ -571,14 +596,16 @@ body.lock{overflow:hidden}
 .orgc__branches::before{content:"";position:absolute;top:0;left:calc((100% - var(--g))/4);right:calc((100% - var(--g))/4);height:2px;background:var(--line-l2)}
 .orgc__branch{position:relative}
 .orgc__branch::before{content:"";position:absolute;top:-46px;left:50%;transform:translateX(-50%);width:2px;height:46px;background:var(--line-l2)}
-/* division box */
-.orgc__node{border:1px solid var(--line-l2);border-top:3px solid var(--orange);background:#fff;padding:clamp(20px,2vw,28px) clamp(18px,2vw,28px);text-align:center}
-.orgc__node h4{font-size:clamp(20px,1.9vw,27px);font-weight:800;letter-spacing:-.02em}
-.orgc__node .sub{margin-top:8px;font-size:13px;letter-spacing:.02em;color:var(--ink-mut)}
+/* division box: 케이원 / 케이원오션 — 오렌지 라운드 도형 */
+.orgc__node{background:var(--orange);color:#fff;border-radius:14px;
+  padding:clamp(20px,2vw,28px) clamp(18px,2vw,28px);text-align:center;
+  box-shadow:0 14px 30px -20px rgba(226,87,31,.7)}
+.orgc__node h4{font-size:clamp(20px,1.9vw,27px);font-weight:800;letter-spacing:-.02em;color:#fff}
+.orgc__node .sub{margin-top:8px;font-size:13px;letter-spacing:.02em;color:rgba(255,255,255,.86)}
 /* team boxes hanging off a vertical spine */
 .orgc__teams{--pl:clamp(30px,3vw,50px);--gp:12px;--sx:16px;position:relative;margin-top:44px;padding-left:var(--pl);display:grid;gap:var(--gp)}
 .orgc__teams li{position:relative;background:#fff;border:1px solid var(--line-l);border-left:3px solid var(--orange);
-  padding:15px 18px;font-size:15.5px;font-weight:600;color:var(--ink-2);
+  border-radius:10px;padding:15px 18px;font-size:15.5px;font-weight:600;color:var(--ink-2);
   transition:transform .35s var(--e1),box-shadow .35s var(--e1),background .35s}
 /* spine segment per box, extended by half the gap so segments join into one line */
 .orgc__teams li::after{content:"";position:absolute;left:calc(var(--sx) - var(--pl) - 1px);
@@ -654,8 +681,8 @@ body.lock{overflow:hidden}
 /* ---- CONTACT ---- */
 .cwrap{display:grid;grid-template-columns:.78fr 1.22fr;gap:clamp(40px,6vw,88px);align-items:start}
 .cinfo{border-top:1px solid var(--line-l)}
-.cinfo__i{display:grid;grid-template-columns:24px 1fr;column-gap:16px;row-gap:2px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line-l)}
-.cinfo__i .ic{width:22px;height:22px;color:var(--orange);grid-row:span 2;align-self:start;margin-top:3px}
+.cinfo__i{display:grid;grid-template-columns:30px 1fr;column-gap:16px;row-gap:2px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line-l)}
+.cinfo__i .ic{width:28px;height:28px;color:var(--orange);grid-row:span 2;align-self:start;margin-top:2px}
 .cinfo__i .k{font-size:13.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-mut)}
 .cinfo__i .v{font-size:18.5px;font-weight:600;color:var(--ink)}
 .cinfo__note{margin-top:22px;font-size:15px;color:var(--ink-mut);line-height:1.7}
@@ -712,5 +739,5 @@ body.lock{overflow:hidden}
   .tech,.bizd__grid,.proc,.hist,.gall,.cform__row{grid-template-columns:1fr}
   .prin__row{grid-template-columns:1fr;gap:10px}.prin__row p{grid-column:1}
   .loc__i{grid-template-columns:1fr}
-  .cinfo__i{grid-template-columns:20px 1fr}
+  .cinfo__i{grid-template-columns:28px 1fr}
 }
