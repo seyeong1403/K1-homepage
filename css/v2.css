@@ -285,6 +285,29 @@ body.lock{overflow:hidden}
 .val p{margin-top:16px;font-size:15.5px;color:var(--ink-mut);line-height:1.8}
 
 /* =====================================================================
+   Brands — K1 · K1 OCEAN (two operating identities, divider not boxes)
+   ===================================================================== */
+.brands__head{max-width:var(--wrap);margin-bottom:clamp(48px,5.5vw,84px)}
+.brands__head h2{margin-top:20px;font-size:clamp(30px,4vw,54px);font-weight:800;letter-spacing:-.035em;line-height:1.09}
+.brands__head .lead{margin-top:22px}
+.brands__grid{display:grid;grid-template-columns:1fr 1fr}
+.brand-c{padding:0 clamp(22px,3.4vw,60px)}
+.brand-c:first-child{padding-left:0}
+.brand-c:last-child{padding-right:0;border-left:1px solid var(--line-l2)}
+.brand-c__id{display:flex;align-items:center;gap:clamp(14px,1.4vw,20px);margin-bottom:clamp(24px,2.4vw,32px)}
+.brand-c__mk{width:clamp(58px,5.4vw,76px);height:auto;flex:none}
+.brand-c__nm{display:flex;flex-direction:column;gap:6px;min-width:0}
+.brand-c__nm b{display:flex;align-items:baseline;gap:11px;font-size:clamp(21px,2vw,27px);font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+.brand-c__nm b span{font-size:.6em;font-weight:700;letter-spacing:.02em;color:var(--ink-mut)}
+.brand-c__svc{font-size:14px;font-weight:700;letter-spacing:.04em;color:var(--orange)}
+.brand-c__en{padding-bottom:clamp(22px,2.2vw,28px);margin-bottom:clamp(24px,2.4vw,30px);
+  border-bottom:1px solid var(--line-l);font-size:14.5px;letter-spacing:.01em;color:var(--ink-mut)}
+.brand-c__tag{font-size:clamp(19px,1.7vw,23px);font-weight:700;line-height:1.5;letter-spacing:-.02em;color:var(--ink);margin-bottom:22px}
+.brand-c>p{font-size:16.5px;line-height:1.85;color:var(--ink-mut)}
+.brand-c>p + p{margin-top:16px}
+.brand-c h3{margin:clamp(26px,2.6vw,34px) 0 14px;font-size:17px;font-weight:800;letter-spacing:-.01em;color:var(--ink)}
+
+/* =====================================================================
    Capability — SYSTEM DIAGRAM (commissioning schematic, dark)
    ===================================================================== */
 .cap{background:var(--bg0);color:var(--hi);overflow:hidden;position:relative}
@@ -483,6 +506,9 @@ body.lock{overflow:hidden}
   .about__grid,.cap__grid{grid-template-columns:1fr}
   .about__img{margin-inline:calc(var(--pad)*-1);min-height:clamp(340px,60vw,520px)}
   .about__txt{padding:clamp(36px,6vw,60px) 0 0}
+  .brands__grid{grid-template-columns:1fr}
+  .brand-c{padding:0}
+  .brand-c:last-child{border-left:0;border-top:1px solid var(--line-l2);margin-top:clamp(40px,7vw,60px);padding-top:clamp(40px,7vw,60px)}
   .cap__aside{position:static}
   .cap__sys{padding-left:clamp(20px,4vw,40px)}
   .foot__top{grid-template-columns:1fr;gap:44px}
