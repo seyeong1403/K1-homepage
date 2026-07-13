@@ -302,9 +302,10 @@ body.lock{overflow:hidden}
 .brand-c__svc{font-size:14px;font-weight:700;letter-spacing:.04em;color:var(--orange)}
 .brand-c__en{padding-bottom:clamp(22px,2.2vw,28px);margin-bottom:clamp(24px,2.4vw,30px);
   border-bottom:1px solid var(--line-l);font-size:14.5px;letter-spacing:.01em;color:var(--ink-mut)}
-.brand-c__tag{font-size:clamp(19px,1.7vw,23px);font-weight:700;line-height:1.5;letter-spacing:-.02em;color:var(--ink);margin-bottom:22px}
 .brand-c>p{font-size:16.5px;line-height:1.85;color:var(--ink-mut)}
 .brand-c>p + p{margin-top:16px}
+/* 태그라인 — .brand-c>p(0,1,1)보다 특이도를 높여 강조색·큰 크기를 유지한다 */
+.brand-c p.brand-c__tag{font-size:clamp(19px,1.7vw,23px);font-weight:700;line-height:1.5;letter-spacing:-.02em;color:var(--ink);margin-bottom:22px}
 .brand-c h3{margin:clamp(26px,2.6vw,34px) 0 14px;font-size:17px;font-weight:800;letter-spacing:-.01em;color:var(--ink)}
 
 /* =====================================================================
