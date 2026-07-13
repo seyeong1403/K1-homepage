@@ -322,14 +322,14 @@ body.lock{overflow:hidden}
 .cap__badge{margin-top:34px;display:inline-flex;align-items:center;gap:12px;font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);padding:11px 18px;border:1px solid rgba(226,87,31,.4)}
 .cap__badge i{width:7px;height:7px;background:var(--orange);border-radius:50%;box-shadow:0 0 0 4px rgba(226,87,31,.2)}
 /* schematic: nodes on a spine, alternating, connector ticks */
-.cap__sys{position:relative;padding-left:clamp(24px,4vw,60px)}
+.cap__sys{--cap-pad:clamp(24px,4vw,60px);position:relative;padding-left:var(--cap-pad)}
 .cap__sys::before{content:"";position:absolute;left:9px;top:34px;bottom:34px;width:2px;background:linear-gradient(rgba(226,87,31,.9),rgba(226,87,31,.5))}
 .cap__node{position:relative;padding:clamp(24px,2.6vw,36px) 0;border-bottom:1px solid var(--line-d)}
 .cap__node:last-child{border-bottom:0}
 .cap__node .no{font-size:13px;font-weight:700;color:var(--orange);font-variant-numeric:tabular-nums;letter-spacing:.1em}
 .cap__node h3{position:relative;font-size:clamp(23px,2.6vw,36px);font-weight:800;letter-spacing:-.03em;line-height:1.12;margin:9px 0 0;color:var(--hi);transition:color .3s}
 /* 노드 원: 제목(h3) 세로 중앙에 정확히 맞춘다 (가로 연결선 없음) */
-.cap__node h3::before{content:"";position:absolute;left:calc(-1*clamp(24px,4vw,60px) + 1px);top:50%;transform:translateY(-50%);
+.cap__node h3::before{content:"";position:absolute;left:calc(-1*var(--cap-pad) + 1px);top:50%;transform:translateY(-50%);
   width:18px;height:18px;border-radius:50%;background:var(--bg0);border:2px solid rgba(151,178,203,.45);transition:border-color .4s,box-shadow .4s}
 .cap__node:hover h3::before{border-color:var(--orange);box-shadow:0 0 0 6px rgba(226,87,31,.15)}
 .cap__node:hover h3{color:#fff}
@@ -497,7 +497,8 @@ body.lock{overflow:hidden}
    Responsive
    ===================================================================== */
 @media (max-width:1080px){
-  .gnb,.head__cta{display:none}
+  /* gnbwrap 까지 숨겨야 그리드가 brand·head__r 2개로 맞아 햄버거가 아래로 밀리지 않는다 */
+  .gnb,.head__cta,.gnbwrap{display:none}
   .burger{display:flex}
   .head__in{grid-template-columns:1fr auto}
   .dom__in{grid-template-columns:1fr;gap:24px}
@@ -511,7 +512,7 @@ body.lock{overflow:hidden}
   .brand-c{padding:0}
   .brand-c:last-child{border-left:0;border-top:1px solid var(--line-l2);margin-top:clamp(40px,7vw,60px);padding-top:clamp(40px,7vw,60px)}
   .cap__aside{position:static}
-  .cap__sys{padding-left:clamp(20px,4vw,40px)}
+  .cap__sys{--cap-pad:clamp(20px,4vw,40px)}
   .foot__top{grid-template-columns:1fr;gap:44px}
   .foot__map{grid-template-columns:repeat(3,1fr);gap:24px 20px}
 }
