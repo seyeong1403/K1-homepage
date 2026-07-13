@@ -428,6 +428,8 @@ body.lock{overflow:hidden}
 .wall{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line-l);border:1px solid var(--line-l)}
 .wall i{display:grid;place-items:center;padding:44px 20px;min-height:128px;background:var(--paper)}
 .wall i img{max-height:42px;max-width:78%;width:auto;object-fit:contain;opacity:.66;filter:grayscale(1);transition:.45s var(--e1)}
+/* GSI(广船国际)는 가로로 긴 락업이라 폭 제한을 조금 완화해 다른 로고와 높이를 맞춘다 */
+.wall i img.gsi{max-width:90%}
 .wall i:hover img{opacity:1;filter:none;transform:scale(1.05)}
 /* 로고 미확보 고객사 — 워드마크 대신 텍스트 표기 */
 .wall i.txt{font-size:clamp(14px,1.1vw,17px);font-weight:700;letter-spacing:-.01em;text-align:center;color:var(--ink-mut);opacity:.66;transition:.45s var(--e1)}
