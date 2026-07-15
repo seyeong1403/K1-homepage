@@ -621,9 +621,12 @@ body.lock{overflow:hidden}
 .mv{margin-top:clamp(52px,6vw,84px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,40px);align-items:stretch}
 .mv__c{padding:clamp(30px,3vw,44px) 0 0;border-top:2px solid var(--ink)}
 .mv__c .k{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mut)}
-.mv__c ol{margin-top:22px;display:flex;flex-direction:column;gap:14px}
-.mv__c ol li{font-size:clamp(18px,1.8vw,24px);font-weight:700;letter-spacing:-.02em;color:var(--ink);padding-left:20px;position:relative}
-.mv__c ol li::before{content:"";position:absolute;left:0;top:.7em;width:10px;height:2px;background:var(--orange)}
+/* 번호를 라인(컬럼 좌측)에 정확히 맞춘다: 기본 ol 마커(list-style:outside)는 왼쪽으로
+   삐져나오므로 카운터로 직접 렌더 — 번호(라인 위치) · 오렌지 대시 · 본문 순 */
+.mv__c ol{margin-top:22px;display:flex;flex-direction:column;gap:14px;list-style:none;padding-left:0;counter-reset:mvc}
+.mv__c ol li{font-size:clamp(18px,1.8vw,24px);font-weight:700;letter-spacing:-.02em;color:var(--ink);padding-left:42px;position:relative;counter-increment:mvc}
+.mv__c ol li::before{content:counter(mvc) ".";position:absolute;left:0;top:0;color:var(--ink);font-weight:800;font-variant-numeric:tabular-nums}
+.mv__c ol li::after{content:"";position:absolute;left:23px;top:.7em;width:10px;height:2px;background:var(--orange)}
 .mv__c.dark{background:var(--bg0);color:#fff;padding:clamp(34px,3.6vw,50px);border-top:0}
 .mv__c.dark .k{color:var(--dim)}
 .mv__c .vh{margin-top:20px;font-size:clamp(24px,2.6vw,36px);font-weight:800;letter-spacing:-.03em;line-height:1.15;color:#fff}
