@@ -63,6 +63,8 @@ section[id]{scroll-margin-top:92px}
 .lead{font-size:clamp(17px,1.5vw,21px);line-height:1.85;color:var(--ink-mut);max-width:58ch}
 .sec--dark .lead{color:var(--dim)}
 em{font-style:normal;color:var(--orange)}
+/* 붙여 읽어야 하는 어구를 한 덩어리로 묶어 어색한 줄바꿈을 막는다 */
+.nb{white-space:nowrap}
 
 /* ---- buttons ---- */
 .btn{position:relative;display:inline-flex;align-items:center;gap:34px;justify-content:space-between;min-width:224px;
