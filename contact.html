@@ -34,7 +34,7 @@
         <div class="mega__col"><h5>사업분야</h5><a href="business.html#commissioning">시운전</a><a href="business.html#support">기술지원</a><a href="business.html#maintenance">유지보수</a></div>
         <div class="mega__col"><h5>프로젝트 실적</h5><a href="projects.html#domestic">국내 프로젝트</a><a href="projects.html#overseas">해외 프로젝트</a><a href="projects.html#clients">주요 고객사</a></div>
         <div class="mega__col"><h5>인재채용</h5><a href="recruit.html">채용안내</a><a href="recruit.html#jobs">채용공고</a></div>
-        <div class="mega__col"><h5>홍보센터</h5><a href="news.html">게시판</a><a href="news.html#gallery">갤러리</a></div>
+        <div class="mega__col"><h5>홍보센터</h5><a href="news.html">게시판</a><a href="news.html#gallery">갤러리</a><a href="news.html#ci">CI</a></div>
         <div class="mega__col"><h5>고객문의</h5><a href="contact.html#inquiry">문의하기</a><a href="contact.html#map">오시는 길</a></div>
       </div></div>
     </div>
@@ -50,7 +50,7 @@
   <div class="drawer__grp"><b><a href="business.html">사업분야</a></b><div class="sub"><a href="business.html#commissioning">시운전</a><a href="business.html#support">기술지원</a><a href="business.html#maintenance">유지보수</a></div></div>
   <div class="drawer__grp"><b><a href="projects.html">프로젝트 실적</a></b><div class="sub"><a href="projects.html#domestic">국내</a><a href="projects.html#overseas">해외</a><a href="projects.html#clients">주요 고객사</a></div></div>
   <div class="drawer__grp"><b><a href="recruit.html">인재채용</a></b><div class="sub"><a href="recruit.html">채용안내</a><a href="recruit.html#jobs">채용공고</a></div></div>
-  <div class="drawer__grp"><b><a href="news.html">홍보센터</a></b><div class="sub"><a href="news.html">게시판</a><a href="news.html#gallery">갤러리</a></div></div>
+  <div class="drawer__grp"><b><a href="news.html">홍보센터</a></b><div class="sub"><a href="news.html">게시판</a><a href="news.html#gallery">갤러리</a><a href="news.html#ci">CI</a></div></div>
   <div class="drawer__grp"><b><a href="contact.html">고객문의</a></b><div class="sub"><a href="contact.html#inquiry">문의하기</a><a href="contact.html#map">오시는 길</a></div></div>
   <a class="btn btn--solid drawer__cta" href="contact.html"><span>고객문의</span>
     <svg viewBox="0 0 40 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 6h37M32 1l6 5-6 5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -87,24 +87,39 @@
       <div class="cinfo">
         <div class="cinfo__i"><i class="ic i-phone" aria-hidden="true"></i><div class="k">대표 전화</div><a class="v" href="tel:055-736-5959">055-736-5959</a></div>
         <div class="cinfo__i"><i class="ic i-fax" aria-hidden="true"></i><div class="k">팩스</div><div class="v">055-736-6969</div></div>
-        <div class="cinfo__i"><i class="ic i-mail" aria-hidden="true"></i><div class="k">이메일</div><a class="v" href="mailto:k1ocean@k1tnc.co.kr">k1ocean@k1tnc.co.kr</a></div>
+        <div class="cinfo__i"><i class="ic i-mail" aria-hidden="true"></i><div class="k">이메일</div><a class="v" href="mailto:minseon.kim@k1tnc.co.kr">minseon.kim@k1tnc.co.kr</a></div>
         <div class="cinfo__i"><i class="ic i-location" aria-hidden="true"></i><div class="k">본사</div><div class="v">경남 거제시 옥포대첩로 59, 2F</div></div>
         <div class="cinfo__note">업무 시간 · 평일 09:00 – 18:00 (주말 · 공휴일 휴무)</div>
       </div>
 
-      <form class="cform" action="mailto:k1ocean@k1tnc.co.kr" method="post" enctype="text/plain" aria-label="문의 양식">
+      <form class="cform" action="mailto:minseon.kim@k1tnc.co.kr" method="post" enctype="text/plain" aria-label="문의 양식">
         <div class="cform__row">
-          <label class="cf">이름 <span>*</span><input type="text" name="이름" required placeholder="홍길동"></label>
-          <label class="cf">회사 / 기관<input type="text" name="회사" placeholder="(주)케이원"></label>
+          <label class="cf">문의 목적 <span>*</span>
+            <select name="문의목적" required>
+              <option value="" selected disabled>선택해 주세요</option>
+              <option>Turnkey</option>
+              <option>Technical Service</option>
+              <option>Project Manpower</option>
+              <option>Partnership</option>
+              <option>Recruitment</option>
+              <option>etc</option>
+            </select></label>
+          <label class="cf">회사 / 기관
+            <select name="회사">
+              <option value="" selected disabled>선택해 주세요</option>
+              <option>케이원</option>
+              <option>케이원오션</option>
+            </select></label>
         </div>
         <div class="cform__row">
-          <label class="cf">이메일 <span>*</span><input type="email" name="이메일" required placeholder="name@company.com"></label>
-          <label class="cf">연락처<input type="tel" name="연락처" placeholder="010-0000-0000"></label>
+          <label class="cf">이름 <span>*</span><input type="text" name="이름" required></label>
+          <label class="cf">연락처<input type="tel" name="연락처"></label>
         </div>
+        <label class="cf">이메일 <span>*</span><input type="email" name="이메일" required></label>
         <label class="cf">문의 내용 <span>*</span><textarea name="문의내용" rows="6" required placeholder="문의하실 내용을 입력해 주세요."></textarea></label>
         <button type="submit" class="btn btn--solid"><span>문의 보내기</span>
           <svg viewBox="0 0 40 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 6h37M32 1l6 5-6 5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <p class="cform__hint">‘문의 보내기’를 누르면 메일 프로그램으로 내용이 전달됩니다. 바로 <a href="mailto:k1ocean@k1tnc.co.kr">k1ocean@k1tnc.co.kr</a> 로 보내주셔도 됩니다.</p>
+        <p class="cform__hint">‘문의 보내기’를 누르면 메일 프로그램으로 내용이 전달됩니다. 바로 <a href="mailto:minseon.kim@k1tnc.co.kr">minseon.kim@k1tnc.co.kr</a> 로 보내주셔도 됩니다.</p>
       </form>
     </div>
   </div>
@@ -124,21 +139,21 @@
           <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=128.6900418%2C34.8918086%2C128.6980418%2C34.8968086&layer=mapnik&marker=34.8943086%2C128.6940418"
             title="거제 본사 위치 지도 — 경남 거제시 옥포대첩로 59" loading="lazy"></iframe>
         </div>
-        <div class="loc__b"><div class="tag">본사 · HQ</div><h3>거제 본사</h3><p>경남 거제시 옥포대첩로 59, 2F</p><div class="loc__c"><span>TEL 055-736-5959</span><span>FAX 055-736-6969</span></div></div>
+        <div class="loc__b"><div class="tag">K1 · HQ</div><h3>거제 본사</h3><p>경남 거제시 옥포대첩로 59, 2F</p><div class="loc__c"><span>TEL 055-736-5959</span><span>FAX 055-736-6969</span></div></div>
       </div>
       <div class="loc__i">
         <div class="loc__map">
           <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=126.3805798%2C34.7506621%2C126.4005798%2C34.7631621&layer=mapnik&marker=34.7569121%2C126.3905798"
             title="영암 지사 위치 지도 — 전남 영암군 삼호읍 대불로 93" loading="lazy"></iframe>
         </div>
-        <div class="loc__b"><div class="tag">지사 · Branch</div><h3>영암 지사</h3><p>전남 영암군 삼호읍 대불로 93</p><div class="loc__c"><span>HD현대삼호 · 대불산단 인근</span></div></div>
+        <div class="loc__b"><div class="tag">K1 OCEAN · Branch</div><h3>영암 지사</h3><p>전남 영암군 삼호읍 대불로 93</p><div class="loc__c"><span>TEL 061-460-3937</span><span>FAX 061-462-7037</span></div></div>
       </div>
       <div class="loc__i">
         <div class="loc__map">
           <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=129.4031875%2C35.4767992%2C129.4111875%2C35.4817992&layer=mapnik&marker=35.4792992%2C129.4071875"
             title="울산 지사 위치 지도 — 울산 동구 방어진순환도로 400" loading="lazy"></iframe>
         </div>
-        <div class="loc__b"><div class="tag">지사 · Branch</div><h3>울산 지사</h3><p>울산 동구 방어진순환도로 400</p><div class="loc__c"><span>HD현대중공업 인근</span></div></div>
+        <div class="loc__b"><div class="tag">K1 · Branch</div><h3>울산 지사</h3><p>울산 동구 방어진순환도로 400</p></div>
       </div>
     </div>
     <p class="loc__attr">지도 데이터 © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> 기여자</p>
@@ -152,7 +167,7 @@
   <div class="foot__cta">
     <div class="wrap">
       <h2>프로젝트의 마지막 순간,<br><em>케이원이 함께하겠습니다</em></h2>
-      <a class="btn btn--solid" href="mailto:k1ocean@k1tnc.co.kr"><span>이메일 문의</span>
+      <a class="btn btn--solid" href="mailto:minseon.kim@k1tnc.co.kr"><span>이메일 문의</span>
         <svg viewBox="0 0 40 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 6h37M32 1l6 5-6 5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
@@ -161,22 +176,22 @@
       <div class="foot__logo">
         <img src="assets/logo-k1-dark.png" alt="(주)케이원 · Korea No.1">
       </div>
-      <p>해양플랜트 · 조선 · 에너지 산업의 시스템 완성과 성능 구현을 책임지는 통합 시운전 전문 기업.</p>
+      <p>조선 · 해양 · 에너지 산업의 Commissioning 전 과정을 하나의 책임체계로 수행하는 Turnkey 전문기업.</p>
     </div>
     <div class="foot__map">
       <div class="foot__col"><h4>회사소개</h4><a href="about.html#ceo">CEO 인사말</a><a href="about.html#overview">회사개요</a><a href="about.html#org">조직도</a></div>
       <div class="foot__col"><h4>사업분야</h4><a href="business.html#commissioning">시운전</a><a href="business.html#support">기술지원</a><a href="business.html#maintenance">유지보수</a></div>
       <div class="foot__col"><h4>프로젝트 실적</h4><a href="projects.html#domestic">국내 프로젝트</a><a href="projects.html#overseas">해외 프로젝트</a><a href="projects.html#clients">주요 고객사</a></div>
       <div class="foot__col"><h4>인재채용</h4><a href="recruit.html">채용안내</a><a href="recruit.html#jobs">채용공고</a></div>
-      <div class="foot__col"><h4>홍보센터</h4><a href="news.html">게시판</a><a href="news.html#gallery">갤러리</a></div>
+      <div class="foot__col"><h4>홍보센터</h4><a href="news.html">게시판</a><a href="news.html#gallery">갤러리</a><a href="news.html#ci">CI</a></div>
       <div class="foot__col"><h4>고객문의</h4><a href="contact.html#inquiry">문의하기</a><a href="contact.html#map">오시는 길</a></div>
     </div>
   </div>
   <div class="wrap foot__info">
-    <span><b>본사</b> 경남 거제시 옥포대첩로 59, 2F</span>
-    <span><b>지사</b> 전남 영암군 삼호읍 대불로 93 · 울산 동구 방어진순환도로 400</span>
+    <span><b>K1</b> 경남 거제시 옥포대첩로 59, 2F · 울산 동구 방어진순환도로 400</span>
+    <span><b>K1 OCEAN</b> 전남 영암군 삼호읍 대불로 93</span>
     <span><b>TEL</b> 055-736-5959 · <b>FAX</b> 055-736-6969</span>
-    <span><b>E-mail</b> k1ocean@k1tnc.co.kr</span>
+    <span><b>E-mail</b> minseon.kim@k1tnc.co.kr</span>
   </div>
   <div class="wrap foot__bot">© 2026 (주)케이원 (K1 Co., Ltd.) · K1 OCEAN — All rights reserved.</div>
 </footer>
