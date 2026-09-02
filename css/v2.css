@@ -1039,3 +1039,20 @@ body.lock{overflow:hidden}
 .e404__nav a:hover{color:var(--orange-2)}
 .e404__nav a:not(:last-child)::after{content:"";display:inline-block;width:3px;height:3px;border-radius:50%;
   background:var(--line-d2);margin:0 16px;vertical-align:middle}
+
+/* =====================================================================
+   Language switch — KR / EN
+   ===================================================================== */
+.lang{display:inline-flex;align-items:center;gap:2px;flex:none}
+.lang__b{position:relative;padding:6px 9px;font-size:14px;font-weight:700;letter-spacing:.04em;
+  color:currentColor;opacity:.55;transition:opacity .3s,color .3s}
+.lang__b+.lang__b::before{content:"";position:absolute;left:-2px;top:50%;transform:translateY(-50%);
+  width:1px;height:11px;background:currentColor;opacity:.35}
+.lang__b:hover{opacity:.9}
+.lang__b.is-on{opacity:1;color:var(--orange-2)}
+.head.light .lang__b.is-on{color:var(--orange-ink)}
+/* 모바일 드로어 안에서는 크게, 위쪽에 */
+.lang--drawer{margin:6px 0 18px;gap:4px}
+.lang--drawer .lang__b{padding:8px 12px;font-size:17px;color:#fff}
+.lang--drawer .lang__b.is-on{color:var(--orange-2)}
+@media (max-width:1080px){ .head__r .lang{display:none} }

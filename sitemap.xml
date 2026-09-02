@@ -1,10 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://k1tnc.co.kr/</loc><lastmod>2026-09-02</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://k1tnc.co.kr/about.html</loc><lastmod>2026-09-02</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://k1tnc.co.kr/business.html</loc><lastmod>2026-09-02</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://k1tnc.co.kr/projects.html</loc><lastmod>2026-09-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://k1tnc.co.kr/recruit.html</loc><lastmod>2026-09-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://k1tnc.co.kr/news.html</loc><lastmod>2026-09-02</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://k1tnc.co.kr/contact.html</loc><lastmod>2026-09-02</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://k1tnc.co.kr/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://k1tnc.co.kr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k1tnc.co.kr/en/"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://k1tnc.co.kr/en/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://k1tnc.co.kr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k1tnc.co.kr/en/"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://k1tnc.co.kr/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://k1tnc.co.kr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k1tnc.co.kr/en/about.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://k1tnc.co.kr/en/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://k1tnc.co.kr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k1tnc.co.kr/en/about.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://k1tnc.co.kr/business.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://k1tnc.co.kr/business.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k1tnc.co.kr/en/business.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://k1tnc.co.kr/en/business.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://k1tnc.co.kr/business.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k1tnc.co.kr/en/business.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://k1tnc.co.kr/projects.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://k1tnc.co.kr/projects.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k1tnc.co.kr/en/projects.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://k1tnc.co.kr/en/projects.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://k1tnc.co.kr/projects.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k1tnc.co.kr/en/projects.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://k1tnc.co.kr/recruit.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://k1tnc.co.kr/recruit.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k1tnc.co.kr/en/recruit.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://k1tnc.co.kr/en/recruit.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://k1tnc.co.kr/recruit.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k1tnc.co.kr/en/recruit.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://k1tnc.co.kr/news.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://k1tnc.co.kr/news.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k1tnc.co.kr/en/news.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://k1tnc.co.kr/en/news.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://k1tnc.co.kr/news.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k1tnc.co.kr/en/news.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://k1tnc.co.kr/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://k1tnc.co.kr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k1tnc.co.kr/en/contact.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://k1tnc.co.kr/en/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://k1tnc.co.kr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://k1tnc.co.kr/en/contact.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
