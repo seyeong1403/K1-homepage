@@ -12,7 +12,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 I18N = os.path.join(ROOT, '_i18n')
 EN = os.path.join(ROOT, 'en')
 PAGES = ['index.html', 'about.html', 'business.html', 'projects.html',
-         'recruit.html', 'news.html', 'contact.html']
+         'recruit.html', 'news.html', 'contact.html', 'privacy.html']
 KO = re.compile(r'[가-힣]')
 SITE = 'https://k1tnc.co.kr'
 
@@ -62,6 +62,7 @@ POST = [
     ('name="연락처"', 'name="Phone"'),
     ('name="이메일"', 'name="Email"'),
     ('name="문의내용"', 'name="Message"'),
+    ('name="개인정보동의"', 'name="Consent"'),
     ('subject=[인재채용] 상시지원 이력서 제출', 'subject=[Careers] Open application'),
     # 180억원 = 180억 → 영문은 18 billion KRW 로 단위를 바꾼다
     ('<span data-count="180">180</span><em>B KRW</em>',

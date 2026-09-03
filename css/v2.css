@@ -604,7 +604,10 @@ body.lock{overflow:hidden}
 .foot__col a:hover{color:var(--orange)}
 .foot__info{padding-block:34px;border-top:1px solid var(--line-d);display:flex;flex-wrap:wrap;gap:10px 44px;font-size:14px;color:var(--dim-2)}
 .foot__info b{color:var(--hi);font-weight:600}
-.foot__bot{padding-block:26px 44px;font-size:13px;color:var(--dim-2)}
+.foot__bot{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;padding-block:26px 44px;font-size:13px;color:var(--dim-2)}
+/* 개인정보 처리방침은 법적 고지라 저작권 표기보다 앞에 둔다 */
+.foot__pp{order:-1;color:var(--dim);font-weight:700;text-decoration:none;transition:color .3s var(--e1)}
+.foot__pp:hover{color:var(--orange-2);text-decoration:underline;text-underline-offset:3px}
 
 /* =====================================================================
    Responsive
@@ -1056,3 +1059,38 @@ body.lock{overflow:hidden}
 .lang--drawer .lang__b{padding:8px 12px;font-size:17px;color:#fff}
 .lang--drawer .lang__b.is-on{color:var(--orange-2)}
 @media (max-width:1080px){ .head__r .lang{display:none} }
+
+/* =====================================================================
+   Privacy policy (privacy.html) — 긴 약관 본문
+   본문 폭을 읽기 좋은 길이로 제한하고, 조 제목을 좌측 규칙선으로 구분한다.
+   ===================================================================== */
+/* 리드 문단도 본문과 같은 폭·시작점을 쓴다(좌측 정렬이 어긋나 보이지 않게) */
+.pp-head{max-width:920px;margin-inline:auto}
+.pp{max-width:920px;margin-inline:auto;color:var(--ink-2)}
+.pp h3{margin:clamp(38px,3.6vw,54px) 0 14px;padding-left:14px;position:relative;
+  font-size:clamp(17px,1.5vw,20px);font-weight:800;letter-spacing:-.02em;color:var(--ink);line-height:1.4}
+.pp h3:first-child{margin-top:0}
+.pp h3::before{content:"";position:absolute;left:0;top:.28em;bottom:.28em;width:3px;background:var(--orange)}
+.pp p{margin:0 0 14px;font-size:16px;line-height:1.85}
+.pp ul{margin:0 0 14px;padding-left:0;list-style:none}
+.pp li{position:relative;padding-left:18px;margin-bottom:8px;font-size:16px;line-height:1.8}
+.pp li::before{content:"";position:absolute;left:2px;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--line-l2)}
+.pp a{color:var(--orange-ink);text-decoration:underline;text-underline-offset:3px}
+
+
+.pp__tbl{margin:0 0 18px;overflow-x:auto}
+.pp table{width:100%;border-collapse:collapse;font-size:15.5px;min-width:460px}
+.pp th,.pp td{padding:13px 16px;border:1px solid var(--line-l);text-align:left;line-height:1.7;vertical-align:top}
+.pp th{background:var(--paper2);font-weight:800;color:var(--ink);white-space:nowrap}
+.pp td:first-child{white-space:nowrap;font-weight:700;color:var(--ink)}
+
+@media (max-width:640px){
+  .pp p,.pp li{font-size:15.5px}
+}
+
+/* 문의 폼 — 개인정보 수집·이용 동의(법정 필수) */
+.cf-agree{display:flex;align-items:flex-start;gap:10px;margin:16px 0 24px;
+  font-size:14.5px;line-height:1.6;color:var(--ink-2);cursor:pointer}
+.cf-agree input{flex:0 0 auto;width:18px;height:18px;margin-top:1px;accent-color:var(--orange);cursor:pointer}
+.cf-agree a{color:var(--orange-ink);text-decoration:underline;text-underline-offset:3px}
+.cf-agree b{color:var(--orange);font-weight:700}
