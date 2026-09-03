@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://k1tnc.co.kr/sitemap.xml
+
+# 관리자 화면 미리보기 (오픈 전 임시)
+Disallow: /admin-preview/
