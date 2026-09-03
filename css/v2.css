@@ -606,7 +606,8 @@ body.lock{overflow:hidden}
 .foot__info b{color:var(--hi);font-weight:600}
 .foot__bot{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;padding-block:26px 44px;font-size:13px;color:var(--dim-2)}
 /* 개인정보 처리방침은 법적 고지라 저작권 표기보다 앞에 둔다 */
-.foot__pp{order:-1;color:var(--dim);font-weight:700;text-decoration:none;transition:color .3s var(--e1)}
+/* 손가락으로도 누르기 쉽도록 높이를 확보한다(보이는 모습은 그대로) */
+.foot__pp{order:-1;display:inline-flex;align-items:center;min-height:26px;color:var(--dim);font-weight:700;text-decoration:none;transition:color .3s var(--e1)}
 .foot__pp:hover{color:var(--orange-2);text-decoration:underline;text-underline-offset:3px}
 
 /* =====================================================================
